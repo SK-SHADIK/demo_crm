@@ -1,0 +1,145 @@
+:root{
+    --black: #0E0E0E;
+    --purple: #DF7527;
+    --purple-light: #df7427e6;
+    --purple-hover: #df7427be;
+    --white: #ebebeb;
+    --grey: #5F5F5F;
+    --yellow:#FFA800;
+    --green:#008000b9;
+    --green-hover:#008000cf;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    color: var(--black);
+    background-color: var(--white);
+}
+
+h1{
+    font-size: 4.8rem;
+    font-weight: 700;
+}
+
+h2{
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+
+h3{
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h4{
+    font-size: 2rem;
+    font-weight: 600;
+}
+h5{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+h6{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+p{
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.btn{
+    display: inline-block;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+/* Primary button -Purple */
+.btn-primary{
+    background-color: var(--purple);
+    color: var(--white);
+    transition: all 5ms ease-in-out;
+}
+.btn-primary:hover{
+    background-color: var(--purple-hover) ;
+}
+/* Secondary Button - Green */
+.btn-green{
+    text-decoration: none;
+    font-size: 0.8rem;
+    color: var(--black);
+    background-color: var(--green);
+    transition: all 5ms ease-in-out;
+}
+.btn-green:hover{
+    cursor: pointer;
+    background-color: var(--green-hover);
+}
+
+.section{
+    max-width: 1200px;
+    margin: 1rem auto;
+    padding: 2rem;
+}
+.ion-icon {
+    width: 1.5rem;
+    color: var(--purple);
+    cursor: pointer;
+  }
+
+.ionicon{
+    width: 1.2rem;
+    cursor: pointer;
+  }
+
+.ion-icon-link{
+    rotate: -30deg ;
+}
+@media screen and (max-width:1150px) and (min-width:500px) {
+    h1{
+        font-size: 4.8rem;
+        font-weight: 700;
+    }
+    
+    h2{
+        font-size: 4rem;
+        font-weight: 700;
+    }
+    
+    
+    h3{
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+    
+    h4{
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    h5{
+        font-size: 1.5rem;
+    }    
+    h6{
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
+    p{
+        font-size: 0.7rem;
+        font-weight: 400;
+    }
+    .btn-green{
+        font-size: 0.6rem;
+    }
+}

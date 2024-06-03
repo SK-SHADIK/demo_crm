@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- SELECT 2 -->
+    <link href="select2/css/select2.min.css" rel="stylesheet" />
+    <script src="select2/js/select2.min.js"></script>
+    <script src="selectScript.js"></script>
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <!-- CUSTOM JS -->
+    <script src="script.js"></script>
+  </head>
+  <body>
+        <!-- Naivigation -->
+        <nav class="section">
+          <ul class="nav-menu">
+            <li class=""><a href="patientdetails.html">Details</a></li>
+            <li><a href="calllog.html">Log</a></li>
+            <li><a href="invoice.html">Invoice</a></li>
+            <li><a href="labtest.html">Lab Test</a></li>
+            <li><a href="servicelist.html">Health Check</a></li>
+            <li><a href="consultation.html">Consultation</a></li>
+            <li class="active-nav-bar"><a href="ticket.html">Ticket</a></li>
+            <li><a href="smsHistory.html">Notification</a></li>
+            <!-- <li><a href="emailHistory.html">Email</a></li> -->
+            <li><a href="ticketHistory.html">History</a></li>
+          </ul>
+        </nav>
+
+    <main class="section">
+      <div class="patient-info-overview">
+        <h6>A K M Fahim Kabir</h6>
+        <h6>PHBL0000034393</h6>
+        <h6>akmkabir@praavahealth.com</h6>
+        <h6>+8801789492777</h6>
+      </div>
+      <br />
+      <!-- DROPDOWN FOR TICKET -->
+      <h5 class=" margin-top-1rem ticket-type-lable">Ticket Type : <span class="ticket-action-p">NPS Response</span></h5>
+      <!-- END OF DROPDOWN -->
+
+      <!-- END OF LAB FORM -->
+
+      <!-- COMPLAIN FORM -->
+      <form id="complainForm" action="">
+        <div class="appointment-form-body">
+          <div class="appointment-department-selecion">
+            <label for="complainType">NPS Response Status : <span class="ticket-action-p">Call successful and received feedback</span></label>
+          </div>
+          <div class="col-span-2">
+            <div class="appointment-remarks">
+              <label >NPS Rating Provided (Overall rating) :<span class="nps-green"> 8</span></label>
+              <br>
+              <label>From 1 to 10, how satisfied are you with our security guard team? <span class="nps-green">8</span></label>
+              <br>
+              <label>From 1 to 10, how satisfied are you with our reception team (front desk/Praava guide)? <span class="nps-green">9</span></label>
+              <br>
+              <label>From 1 to 10, how satisfied are you with our nurse? <span class="nps-green">9</span></label>
+              <br>
+              <label>From 1 to 10, how satisfied are you with our doctor/specialist (in-person) services? <span class="nps-red">4</span></label>
+              <br>
+              <label>From 1 to 10, how satisfied are you with our doctor/specialist (video consultation) services? <span class="nps-green">9</span></label>
+              <br>
+              <label>From 1 to 10, how satisfied are you with our blood/sample collection team? <span class="nps-red">4</span></label>
+              <br>
+              <label>From 1 to 10, how satisfied are you with our X-ray, ETT, ECHO, and/or USG team?<span class="nps-green">8</span></label>
+              <br>
+              <label>From 1 to 10, how satisfied are you with our pharmacy team?<span class="nps-green">8</span></label>
+              <br>
+              <label>From 1 to 10, how satisfied are you with our contact center team?<span class="nps-green">8</span></label>
+              <br>
+              <label>Details: <span class="ticket-action-p">Overall, our service was satisfactory.</span></label>
+            </div>
+          </div>
+        </div>
+      </form>
+      <!-- COMPLAIN FORM END -->
+      <!-- EXTRA FORM -->
+      <form id="complainForm" action="">
+        <div class="appointment-form-body">
+            <div class="col-span-2">
+                <div class="appointment-remarks">
+                  <label for="compain">Remarks</label>
+                  <input type="text" placeholder="eg. text" />
+                </div>
+              </div>
+
+            <div class="appointment-department-selecion">
+              <label for="complainType">Assign to department </label>
+              <select  name="complaintype" class="js-example-basic-single" style="width: 100%;">
+                <option value="lab_report">Finance</option>
+                <option value="lab_report">Information Technology</option>
+                <option value="lab_report">Medical Service</option>
+                <option value="lab_report">Patient Experience</option>
+                <option value="lab_report">Operations</option>
+                <option value="lab_report">Laboratory</option>
+                <option value="lab_report">Corporate Maketing</option>
+                <option value="lab_report">Sales Maketing</option>
+                <option value="lab_report">Human Resource</option>
+                <option value="lab_report">Procurement</option>
+              </select>
+            </div>
+            <div class="doctor-selecion">
+              <label for="complainPriority">Assigned to employee</label>
+              <select  name="priority" class="js-example-basic-single"  multiple="multiple"  style="width: 100%;">
+                <option value="luffy">Md. Habibuzzaman</option>
+                <option value="luffy">Amir Hoossain</option>
+                <option value="luffy">Abdullah Al Jakaria</option>
+                <option value="luffy">Md. Dabirul Islam</option>
+                <option value="luffy">Md. Abu Saeed</option>
+                <option value="luffy">Dulal Gain</option>
+                <option value="luffy">Md. Shohel Khan</option>
+                <option value="luffy">Md. Faysal Sarkar Piyal</option>
+                <option value="luffy">Md. Sayed Anowar</option>
+                <option value="luffy">Bulbul Hossain Talukder</option>
+                <option value="luffy">Nur Hossain</option>
+              </select>
+            </div>
+            <div class="doctor-selecion">
+              <label for="complainPriority">Status</label>
+              <select  name="priority" class="js-example-basic-single" style="width: 100%;">
+                <option value="low">Open</option>
+                <option value="mid">In Progress</option>
+                <option value="high">Close</option>
+                <option value="high">Resolved</option>
+                <option value="high">Re-open</option>
+              </select>
+            </div>
+            <div class="submit-button">
+              <button class="btn btn-green ">Submit</button>
+            </div>
+          
+
+        </div>
+        <br>
+        <br>
+        <br>
+      </form>
+
+      <!-- EXTRA FORM END -->
+      <br>
+      <br>
+      <br>
+     
+      <div class="inbound-call-list">
+        <table class="inbound-call-table">
+            <tbody>
+                <tr class="table-row table-heading-row"> 
+                    <th><h6>Assigned Department</h6></th>
+                    <th><h6>Assigned To</h6></th>
+                    <th><h6>Status </h6></th>
+                    <th><h6 >Assigned Time</h6></th>
+                    <th><h6 >Action Time </h6></th>
+                    <th><h6>Remarks </h6></th>
+                </tr>
+                <tr class="table-row table-data-row">
+                    <td><p>Patient Experience</p></td>
+                    <td><p>Amir Hossain</p></td>
+                    <td><p>Closed</p></td>
+                    <td class=""><p>04-Oct-2023 <br>16:30</p></td>
+                    <td class=""><p>04-Oct-2022 <br>18:00</p></td>
+                    <td class=""><p>NPS Feedback.</p></td>
+                </tr>
+                <tr class="table-row table-data-alt-row">
+                  <td><p>Patient Experience</p></td>
+                  <td><p>Sazzad Siddique</p></td>
+                  <td><p>Open</p></td>
+                  <td class=""><p>04-Oct-2023 <br>15:00</p></td>
+                  <td class=""><p>04-Oct-2023 <br>16:30</p></td>
+                  <td class=""><p>NPS Feedback</p></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination">
+        <p>01 page of 21</p>
+        <div class="pagination-menu">
+         <a class="pagination-nav"><ion-icon name="chevron-back-outline"></ion-icon></a>
+         <a class="pagination-pages active-page" href="">01</a>
+         <a class="pagination-pages" href="">02</a>
+         <a class="pagination-pages" href="">03</a>
+         <a class="pagination-pages" href="">04</a>
+         <a class="pagination-pages" href="">...</a>
+         <a class="pagination-nav"><ion-icon name="chevron-forward-outline"></ion-icon></a>
+        </div>
+     </div>
+    </main>
+  </body>
+</html>
