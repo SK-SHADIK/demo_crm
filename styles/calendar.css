@@ -6,7 +6,7 @@
     margin: 10px 0;
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--purple);
+    color: var(--purple-hover);
     text-align: center;
 }
 
@@ -17,17 +17,16 @@
 
 }
 
-.calendar,
-.calendar-leads {
+.calendar {
     width: 90%;
-    height: 520px;
+    height: 500px;
     border: 1px solid var(--grey);
     border-radius: 5px;
     background-color: var(--white);
 }
 
 .calendar-leads {
-    height: 456px !important;
+    height: 436px !important;
 }
 
 .calendar-header {
@@ -74,8 +73,11 @@
     flex-direction: column;
     overflow: hidden;
 }
-
-.show-more {
+.day-notes a{
+    text-decoration: none;
+    color: var(--purple-hover);
+}
+.show-more a{
     cursor: pointer;
     color: var(--purple);
     margin-top: 5px;

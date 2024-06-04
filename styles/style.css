@@ -258,6 +258,13 @@ th {
     font-size: 0.6rem;
 }
 
+.section-header {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--purple-hover);
+    text-align: center;
+}
+
 @media screen and (max-width:1150px) and (min-width:500px) {
     .phbl {
         margin-left: 19rem;
