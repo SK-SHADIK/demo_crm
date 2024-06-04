@@ -92,3 +92,6 @@
 .actived {
     background-color: var(--purple) !important;
 }
+.actived a{
+    color: var(--white);
+}
