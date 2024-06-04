@@ -265,6 +265,11 @@ th {
     text-align: center;
 }
 
+.table-row a{
+    text-decoration: none;
+    color: var(--purple-light);
+    font-weight: 700;
+}
 @media screen and (max-width:1150px) and (min-width:500px) {
     .phbl {
         margin-left: 19rem;
