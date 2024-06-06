@@ -249,7 +249,8 @@ th {
 }
 
 .focused-color {
-    background-color: var(--purple-hover);
+    color: var(--purple-hover);
+    font-weight: 700;
     padding: 5px;
     border-radius: 5px;
 }
