@@ -14,19 +14,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .calendar {
     width: 90%;
-    height: 500px;
-    border: 1px solid var(--grey);
+    height: 400px;
+    border: none;
     border-radius: 5px;
     background-color: var(--white);
-}
-
-.calendar-leads {
-    height: 436px !important;
 }
 
 .calendar-header {
@@ -42,13 +37,13 @@
     flex: 1;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: auto repeat(6, 1fr); /* added auto for day names row */
     border-top: 1px solid var(--grey);
 }
 
-.calendar-day {
-    border-right: 1px solid var(--grey);
-    border-bottom: 1px solid var(--grey);
+.calendar-day,
+.calendar-day-header {
+    border: 1px solid var(--grey) !important;
     padding: 2px;
     text-align: center;
     display: flex;
@@ -56,7 +51,25 @@
     justify-content: flex-start;
 }
 
-.calendar-day:nth-child(7n) {
+.calendar-day-header {
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: var(--purple);
+    color: var(--white);
+    justify-content: center;
+    align-items: center;
+}
+
+.short-list {
+    max-height: 30px;
+    overflow: hidden;
+    font-weight: 700;
+    color: var(--black);
+    font-size: 16px;
+}
+
+.calendar-day:nth-child(7n),
+.calendar-day-header:nth-child(7n) {
     border-right: none;
 }
 
@@ -73,25 +86,26 @@
     flex-direction: column;
     overflow: hidden;
 }
-.day-notes a{
+
+.day-notes a {
     text-decoration: none;
     color: var(--purple-hover);
 }
-.show-more a{
+
+.show-more a {
     cursor: pointer;
     color: var(--purple);
     margin-top: 5px;
     font-size: 0.8rem;
 }
 
-.calendar-text {
-    font-size: 1rem;
-    font-weight: 700;
-}
-
 .actived {
     background-color: var(--purple) !important;
 }
-.actived a{
+
+.actived a {
     color: var(--white);
+}
+.bg-gray{
+    background-color: #afadad;
 }
