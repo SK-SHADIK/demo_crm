@@ -13,6 +13,7 @@
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/purchase-list.css" />
     <!-- CUSTOM JS -->
     <script src="script.js"></script>
   </head>
@@ -36,7 +37,6 @@
     <main class="section">
       <div class="patient-info-overview">
         <h6>A K M Fahim Kabir</h6>
-        <h6>PHBL0000034393</h6>
         <h6>akmkabir@praavahealth.com</h6>
         <h6>+8801789492777</h6>
       </div>
@@ -44,35 +44,83 @@
       <div class="inbound-call-list">
         <table class="inbound-call-table">
           <tr class="table-row table-heading-row">
-            <th><h6>Report</h6></th>
-            <th><h6>Billed Date</h6></th>
-            <th><h6>Collected</h6></th>
-            <th><h6>Accepted</h6></th>
-            <th><h6>Processed</h6></th>
-            <th><h6>Certified</h6></th>
+            <th><h6>Project Name</h6></th>
+            <th><h6>Flat/Plot Number</h6></th>
+            <th><h6>Purchase Type</h6></th>
+            <th><h6>Status</h6></th>
+            <th><h6>Collected Amount</h6></th>
+            <th><h6>Due Amount</h6></th>
+            <th><h6>Comment</h6></th>
+            <th><h6>File Link</h6></th>
             <th><h6>SMS</h6></th>
             <th><h6>Email</h6></th>
           </tr>
-          <tr class="table-row table-data-row">
-            <td><p>Complete Blood Count</p></td>
-            <td><p>02-Nov-2022</p></td>
-            <td><p>Yes</p></td>
-            <td><p>Yes</p></td>
-            <td><p>Yes</p></td>
-            <td><p>Yes</p></td>
+          <tr class="table-row table-data-row" data-id="1">
+            <td><p>Baridhara</p></td>
+            <td><p>C3</p></td>
+            <td><p>EMI</p></td>
+            <td><p>Booked</p></td>
+            <td><p>1,30,00,000</p></td>
+            <td><p>90,00,000</p></td>
+            <td><p>Payment completed: 40,00,000. Last payment Date: 05-Jun-2024. Next EMI Date: 05-Jul-2024. Remaining:  90,00,000 and that will be cleared within 5 installment</p></td>
+            <td>
+              <p>
+                <img class="ion-icon ion-icon-link" src="Resources/icons/link-outline.svg" alt="icon">
+              </p>
+            </td>
             <td><a href=""><img class="ion-icon ion-icon-link" src="Resources/icons/send-outline.svg" alt="icon"></a></td>
             <td><a href=""><img class="ion-icon ion-icon-link" src="Resources/icons/send-outline.svg" alt="icon"></a></td>
           </tr>
-          <tr class="table-row table-data-alt-row">
-            <td><p>Gloucose Random</p></td>
-            <td><p>22-Jul-2022</p></td>
-            <td><p>Yes</p></td>
-            <td><p>Yes</p></td>
-            <td><p>Yes</p></td>
-            <td><p>Yes</p></td>
+          
+          <tr class="table-row table-data-alt-row" data-id="2">
+            <td><p>Rampura</p></td>
+            <td><p>D2</p></td>
+            <td><p>Down Payment</p></td>
+            <td><p>Booked</p></td>
+            <td><p>1,60,00,000</p></td>
+            <td><p>40,00,000</p></td>
+            <td><p>Payment completed: 1,20,00,000. <span class="due-color">Not Pay in last payment date. Last payment Date: 06-Jun-2024</span>. Next Payment Date: 06-Jul-2024. Remaining: 40,00,000 and that will be cleared within 2 installment</p></td>
+            <td>
+              <p>
+                <img class="ion-icon ion-icon-link" src="Resources/icons/link-outline.svg" alt="icon">
+              </p>
+            </td>
             <td><a href=""><img class="ion-icon ion-icon-link" src="Resources/icons/send-outline.svg" alt="icon"></a></td>
             <td><a href=""><img class="ion-icon ion-icon-link" src="Resources/icons/send-outline.svg" alt="icon"></a></td>
           </tr>
+          <tr class="table-row table-data-row" data-id="3">
+            <td><p>Badda</p></td>
+            <td><p>A1</p></td>
+            <td><p>Bank Loan</p></td>
+            <td><p>Completed</p></td>
+            <td><p>1,10,00,000</p></td>
+            <td><p>00</p></td>
+            <td><p>Payment completed: 1,10,00,000. Bought this flat using bank loan.Payment date: 23-Jan-2024.</p></td>
+            <td>
+              <p>
+                <img class="ion-icon ion-icon-link" src="Resources/icons/link-outline.svg" alt="icon">
+              </p>
+            </td>
+            <td><a href=""><img class="ion-icon ion-icon-link" src="Resources/icons/send-outline.svg" alt="icon"></a></td>
+            <td><a href=""><img class="ion-icon ion-icon-link" src="Resources/icons/send-outline.svg" alt="icon"></a></td>
+          </tr>
+          <tr class="table-row table-data-alt-row" data-id="4">
+            <td><p>Purbachol</p></td>
+            <td><p>A8</p></td>
+            <td><p>One Time Payment</p></td>
+            <td><p>Completed</p></td>
+            <td><p>3,90,00,000</p></td>
+            <td><p>00</p></td>
+            <td><p>Payment completed: 3,90,00,000. Bought this plot using one time payment.Payment date: 15-Mar-2024.</p></td>
+            <td>
+              <p>
+                <img class="ion-icon ion-icon-link" src="Resources/icons/link-outline.svg" alt="icon">
+              </p>
+            </td>
+            <td><a href=""><img class="ion-icon ion-icon-link" src="Resources/icons/send-outline.svg" alt="icon"></a></td>
+            <td><a href=""><img class="ion-icon ion-icon-link" src="Resources/icons/send-outline.svg" alt="icon"></a></td>
+          </tr>
+          
         </table>
       </div>
       <div class="pagination">
@@ -97,17 +145,26 @@
     <footer class="section">
       <form action="" class="footer-form">
         <div class="appointment-department-selecion">
-          <label class="form-label" for="department">Intend Category</label>
+          <label class="form-label" for="date">Payment Date</label>
+          <input type="date" class="form-input-field" name="" id="">
+        </div>
+        <div class="appointment-department-selecion">
+          <label class="form-label" for="payment-type">Payment Type</label>
           <select
             name="doctorDepartment"
             class="js-example-basic-single"
             style="width: 100%"
           >
-            <option value="-/">Select intend call category</option>
-            <option value="high">High</option>
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
+            <option value="-/">Select payment type</option>
+            <option value="emi">EMI</option>
+            <option value="downPayment">Down Payment</option>
+            <option value="bankLoan">Bank Loan</option>
+            <option value="oneTimePayment">One Time Payment</option>
           </select>
+        </div>
+        <div class="appointment-department-selecion">
+          <label class="form-label" for="amount">Amount</label>
+          <input type="number" class="form-input-field" name="" id="">
         </div>
         <div class="form-input form-input-sum">
           <label class="form-label" for="call_summary"> Call summary</label>
@@ -121,5 +178,6 @@
         <button class="btn btn-primary btn-save-info">Save Information</button>
       </form>
     </footer>
+    <script src="scripts/purchase-list.js"></script>
   </body>
 </html>
