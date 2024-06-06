@@ -2,36 +2,24 @@
 
 console.log("Connection Test");
 const ticketDropdownSelect = function (e) {
-  let appointmentForm = document.getElementById("appointmentFrom");
-  let labFrom = document.getElementById("labFrom");
-  let medicineForm = document.getElementById("medicineForm");
   let complainForm = document.getElementById("complainForm");
-  let serviceForm = document.getElementById("serviceForm");
-  let npsResponseTab = document.getElementById("npsResponseTab");
+  let purchaseRequestForm = document.getElementById("purchaseRequestForm");
   let otherForm = document.getElementById("otherForm");
   let covidFrom = document.getElementById("covidFrom");
   let oneTimePaymentForm = document.getElementById("oneTimePaymentForm");
   const ticketDropdownValue = e.value;
 
   if (ticketDropdownValue) {
-    appointmentForm.style.display =
-      ticketDropdownValue === "appointment" ? "block" : "none";
-    labFrom.style.display =
-      ticketDropdownValue === "laboratory" ? "block" : "none";
-    medicineForm.style.display =
-      ticketDropdownValue === "medicine" ? "block" : "none";
+   
     complainForm.style.display =
       ticketDropdownValue === "complain" ? "block" : "none";
-    serviceForm.style.display =
-      ticketDropdownValue === "service" ? "block" : "none";
+      purchaseRequestForm.style.display =
+      ticketDropdownValue === "purchase_request" ? "block" : "none";
     oneTimePaymentForm.style.display =
       ticketDropdownValue === "one_time_payment" ? "block" : "none";
     otherForm.style.display =
       ticketDropdownValue === "others" ? "block" : "none";
-    npsResponseTab.style.display =
-      ticketDropdownValue === "nps_response" ? "block" : "none";
-    covidFrom.style.display =
-      ticketDropdownValue === "covid" ? "block" : "none";
+    
   }
 };
 
@@ -72,7 +60,7 @@ const notificationCheckbox = function () {
 };
 
 // FOR SERVICE SELECTION - ONE TIME PAYMENT
-const serviceForm = function (e) {
+const purchaseRequestForm = function (e) {
   const serviceSection = document.getElementById("service-selection");
   const othersSection = document.getElementById("others-selection");
   const serviceValue = e.value;

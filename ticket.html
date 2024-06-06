@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-        <!-- ION ICON -->
-        <script
-        type="module"
-        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-      ></script>
-      <script
-        nomodule
-        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-      ></script>
+    <!-- ION ICON -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <!-- JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- SELECT 2 -->
@@ -25,182 +20,122 @@
     <!-- CUSTOM JS -->
     <script src="script.js"></script>
   </head>
+
   <body>
-        <!-- Naivigation -->
-        <nav class="section">
-          <ul class="nav-menu">
-            <li class=""><a href="client-details.html">Details</a></li>
-            <li><a href="calllog.html">Log</a></li>
-            <li><a href="project-list.html">Project List</a></li>
-            <li><a href="purchase-list.html">Purchase List</a></li>
-            <li class="active-nav-bar"><a href="ticket.html">Ticket</a></li>
-            <li><a href="smsHistory.html">Notification</a></li>
-            <!-- <li><a href="emailHistory.html">Email</a></li> -->
-            <li><a href="ticketHistory.html">History</a></li>
-          </ul>
-        </nav>
+    <!-- Naivigation -->
+    <nav class="section">
+      <ul class="nav-menu">
+        <li class=""><a href="client-details.html">Details</a></li>
+        <li><a href="calllog.html">Log</a></li>
+        <li><a href="project-list.html">Project List</a></li>
+        <li><a href="purchase-list.html">Purchase List</a></li>
+        <li class="active-nav-bar"><a href="ticket.html">Ticket</a></li>
+        <li><a href="smsHistory.html">Notification</a></li>
+        <!-- <li><a href="emailHistory.html">Email</a></li> -->
+        <li><a href="ticketHistory.html">History</a></li>
+      </ul>
+    </nav>
 
     <main class="section">
       <div class="patient-info-overview">
         <h6>A K M Fahim Kabir</h6>
-        <h6>PHBL0000034393</h6>
         <h6>akmkabir@praavahealth.com</h6>
         <h6>+8801789492777</h6>
       </div>
       <br />
       <!-- DROPDOWN FOR TICKET -->
       <h6 class="ticket-type-lable">Ticket Type</h6>
-      <select
-        id="ticketDropdown"
-        class="ticket-dropdown"
-        onchange="ticketDropdownSelect(this)"
-        name=""
-      >
-        <option class="ticket-dropdown-option" value="appointment">
-          Appointment
+      <select id="ticketDropdown" class="ticket-dropdown" onchange="ticketDropdownSelect(this)" name="">
+        <option class="ticket-dropdown-option" value="purchase_request">
+          Purchase Request
         </option>
-        <option class="ticket-dropdown-option" value="laboratory">
-          Laboratory
-        </option>
-        <option class="ticket-dropdown-option" value="medicine">
-          Medicine
-        </option>
-        <option class="ticket-dropdown-option" value="complain">
-          Complain
-        </option>
-        <option class="ticket-dropdown-option" value="service">Service</option>
         <option class="ticket-dropdown-option" value="information">
           Information
         </option>
         <option class="ticket-dropdown-option" value="one_time_payment">
-          One time payment
+          Payment
         </option>
-        <option class="ticket-dropdown-option" value="nps_response">
-          NPS Response
+        <option class="ticket-dropdown-option" value="complain">
+          Complain
         </option>
-        <option class="ticket-dropdown-option" value="covid">Covid Response</option>
+        <option class="ticket-dropdown-option" value="bidding">
+          Bidding
+        </option>
+        <option class="ticket-dropdown-option" value="EMICalculator">
+          EMI Calculator
+        </option>
         <option class="ticket-dropdown-option" value="others">Others</option>
       </select>
       <!-- END OF DROPDOWN -->
-      <!-- Appointment FORM -->
-      <form id="appointmentFrom" action="" style="display: block">
+      <!-- purchase Request FORM -->
+      <form id="purchaseRequestForm" action="" style="display: block">
         <div class="appointment-form-body">
           <div class="appointment-department-selecion">
-            <label for="department">Department</label>
-            <select name="doctorDepartment" class="js-example-basic-single" style="width: 100%;">
-              <option value="-/">Select Department</option>
-              <option value="familyMedicine">Family Medicine</option>
-              <option value="familyMedicine">Orthopedics</option>
-              <option value="familyMedicine">Acupuncture</option>
-              <option value="familyMedicine">Cardiology</option>
-              <option value="familyMedicine">Dentistry</option>
-              <option value="familyMedicine">ENT</option>
-              <option value="familyMedicine">Gastroenterology & Hepatology</option>
-              <option value="familyMedicine">Medicine</option>
-              <option value="familyMedicine">Nephrology</option>
-              <option value="familyMedicine">Obstetrics & Gynecology</option>
-              <option value="familyMedicine">Pediatrics</option>
-              <option value="familyMedicine">Pediatrics</option>
-              <option value="familyMedicine">Diabetology</option>
-              <option value="familyMedicine">Dermatology</option>
-              <option value="familyMedicine">Urology</option>
+            <label for="service">Project Name</label>
+            <select name="labTest" class="js-example-basic-single" style="width: 100%;">
+              <option value="-/">Select Project</option>
+              <option value="Baridhara">Baridhara J Block</option>
+              <option value="Rampura">Rampura</option>
+              <option value="Badda">Badda</option>
             </select>
           </div>
-          <div class="doctor-selecion">
-            <label for="doctorName">Select Doctor Name</label>
-            <select name="doctor" class="js-example-basic-single" style="width: 100%;">
-              <option value="-/">Select Doctor</option>
-              <option value="farjanaTasinm">Farjana Tasnim</option>
-              <option value="farjanaTasinm">Dr. Harun ar Rashid</option>
-              <option value="farjanaTasinm">Dr. Ashutosh Saha</option>
-              <option value="farjanaTasinm">Dr. Taslima Akter</option>
-              <option value="farjanaTasinm">Assistant Professor Dr. Munshi MB MD Shoaib Adnan</option>
-              <option value="farjanaTasinm">Dr. Sarwer Jamal Biplob</option>
-              <option value="farjanaTasinm">Dr. MD Rezaul Islam (Hira)</option>
-              <option value="farjanaTasinm">Dr. MD Rezaul Islam (Hira)</option>
-              <option value="farjanaTasinm">Dr. Yasmin Joarder</option>
-              <option value="farjanaTasinm">Prof. Dr. Wahida Khan Chowdhury</option>
-              <option value="farjanaTasinm">Dr. Tarafdar Mohammad Mujtaba Ali</option>
-              <option value="farjanaTasinm">Dr. M.A. Mobin Talukder</option>
-            </select>
-          </div>
-          
-          <div class="doctor-selecion">
-            <label for="doctorName">Schedule</label>
-            <select name="doctor" class="js-example-basic-single" style="width: 100%;">
-              <option value="-/">Select Schedule Type</option>
-              <option value="inhub">In hub</option>
-              <option value="online">Online</option>
+          <div class="appointment-department-selecion">
+            <label for="service">Flat/Plot Name</label>
+            <select name="labTest" class="js-example-basic-single" onchange="serviceSelection(this)" multiple="multiple"
+              style="width: 100%;">
+              <option value="-/">Select Flat/Plot</option>
+              <option value="1200000" id="a1">A1</option>
+              <option value="1200000" id="a2">A2</option>
+              <option value="1200000" id="a3">A3</option>
+              <option value="1200000" id="a4">A4</option>
+              <option value="1200000" id="b1">B1</option>
+              <option value="1200000" id="b2">B2</option>
+              <option value="1200000" id="b3">B3</option>
+              <option value="1200000" id="b4">B4</option>
 
             </select>
           </div>
-          <div></div>
-          <div class="slot-selection">
-            <label for="availableSlots">Available Slots</label>
-            <!-- Slots For doctors -->
-            <!-- NEEDS TO REDESIGN AGAIN -->
-            <div class="">
-              <div class="slots slots-bg">
-                <p style="font-weight: 600; color: var(--purple);">11-11-2023 <br> Sat</p>
-                <a href="" class="btn btn-green">11.00 AM - 11.59 AM</a>
-                <a href="" class="btn btn-green">1.20 PM - 2.19 PM</a>
-                <a href="" class="btn btn-green">2.00 PM - 2.59 PM</a>
-              </div>
-              <br>
-              <div class="slots slots-bg">
-                <p style="font-weight: 600; color: var(--purple);">13-11-2023 <br> Tue</p>
-                <a href="" class="btn btn-green">11.00 AM - 11.59 AM</a>
-                <a href="" class="btn btn-green">1.20 PM - 2.19 PM</a>
-              </div>
-            </div>
-            
-          </div>
-          <div class="appointment-remarks">
-            <label for="appointmentRemarks">Remarks</label>
-            <input type="text" placeholder="eg. text" />
-          </div>
-        </div>
-      </form>
-      <!-- END OF APPOINTMENT FORM -->
-      <!-- LAB FORM -->
-      <form id="labFrom" action="" style="display: none">
-        <div class="appointment-form-body">
-          <div class="appointment-department-selecion">
-            <label for="labTest">Lab Test Name</label>
-            <select name="labTest" class="js-example-basic-single" onchange="labTestSelection(this)" multiple="multiple" style="width: 100%;">
-              <option value="-/">Select Lab Test</option>
-              <option id="cbc" value="400">CBC - 400 BDT</option>
-              <option id="rbs" value="300">RBS - 300 BDT</option>
-              <option id="alt" value="725">Alanine Aminotransferase-ALT- 725  BDT</option>
-              <option id="tsh" value="1575">Thyroid-Stimulating Hormone-TSH- 1575  BDT</option>
-              <option id="totalCholesterol" value="500">Total Cholesterol- 500  BDT</option>
-              <option id="glucoseRandom" value="300">Glucose Random- 300  BDT</option>
-              <option id="totalBilirubin" value="550">Total Bilirubin	 - 550 </option>
-              <option id="sgop" value="725">Aspartate Aminotransferase-SGOT	 - 725  BDT</option>
-              <option id="urineRoutine" value="500">Urine Routine Microscopic Examination PLUS	 - 500  BDT </option>
-              <option id="triglycerides" value="550">Triglycerides	 - 550  BDT</option>
-              <option id="ldl" value="600">LDL Cholesterol	 - 600  BDT</option>
-              <option id="hdl" value="600">HDL Cholesterol	 - 600  BDT </option>
-              <option id="hemoglobin" value="1700">Hemoglobin A1c-HbA1C- 1700 BDT</option>
-            </select>
-          </div>
           <div class="med-available-quantity">
-            <label for="LabPrice" >Total Price</label>
-            <input type="text" id="totalPriceOfLabServices" value="" />
+            <label for="servicePrice">Total Price</label>
+            <input type="text" id="servicePrice" value="" />
           </div>
           <div class="med-available-quantity">
             <label for="discountLabtest">Discount Percentage (%)</label>
-            <input name="discountLabtest" id="discountLabtest" type="text"  oninput="updateDiscountedPrice(this.value)" value="0" />
+            <input name="discountLabtest" id="discountService" type="text"
+              onchange="updateDiscountedPriceService(this.value)" value="0" />
           </div>
           <div class="med-available-quantity">
             <label for="discountedPriceLabTest">Discount Amount</label>
-            <input type="text" name="LabTestdiscountAmount" id="LabTestdiscountAmount" readonly />
+            <input type="text" name="discountedPriceLabTest" id="ServiceDiscountAmount" readonly />
           </div>
           <div class="med-available-quantity">
-            <label for="discountedPriceLabTest">Net Amount</label>
-            <input type="text" name="discountedPriceLabTest" id="discountedPriceLabTest" readonly />
+            <label for="discountedPriceService">Net Amount</label>
+            <input type="text" name="discountedPriceService" id="discountedPriceService" readonly />
           </div>
-          <div></div>
+          <div>
+            <div class="appointment-department-selecion">
+              <label for="service">Payment Type</label>
+              <select id="paymentType" name="labTest" class="js-example-basic-single" style="width: 100%;">
+                <option value="-/">Select One</option>
+                <option value="EMI">EMI</option>
+                <option value="DownPayment">Down Payment</option>
+                <option value="BankLoan">Bank Loan</option>
+                <option value="oneTimePayment">One Time Payment</option>
+              </select>
+            </div>
+          </div>
+          <div class="appointment-department-selection">
+            <label for="paymentMethod">Payment Method</label>
+            <select id="paymentMethod" name="paymentMethod" class="js-example-basic-single" style="width: 100%;">
+              <option value="-/">Select One</option>
+              <option value="Cash">Cash</option>
+              <option value="Bank">Bank</option>
+              <option value="Bkash">Bkash</option>
+              <option value="Nagad">Nagad</option>
+              <option value="BankTransfer">Bank Transfer</option>
+            </select>
+          </div>
+
           <div class="appointment-remarks">
             <label for="labRemarks">Remarks</label>
             <input type="text" placeholder="eg. text" />
@@ -215,32 +150,22 @@
             <div class="notification-checkbox-container">
               <p class="notification-headline">Notification</p>
               <div>
-                <input
-                  type="checkbox"
-                  onclick="notificationCheckbox()"
-                  id="email-check"
-                  name="emailCheckbox"
-                />
+                <input type="checkbox" onclick="notificationCheckbox()" id="email-check-service" name="emailCheckbox" />
                 <label for="emailCheckbox">Email</label>
               </div>
               <div>
-                <input
-                  type="checkbox"
-                  onclick="notificationCheckbox()"
-                  id="sms-check"
-                  name="smsCheckbox"
-                />
+                <input type="checkbox" onclick="notificationCheckbox()" id="sms-check-service" name="smsCheckbox" />
                 <label for="smsCheckbox">SMS</label>
               </div>
             </div>
           </div>
-          <div id="email-body" style="display: none">
+          <div id="email-body-service" style="display: none">
             <div class="appointment-remarks">
               <label for="emailBody">Email Body</label>
               <input type="text" placeholder="eg. text" />
             </div>
           </div>
-          <div id="sms-body" style="display: none">
+          <div id="sms-body-service" style="display: none">
             <div class="appointment-remarks">
               <label for="emailBody">SMS Body</label>
               <input type="text" placeholder="eg. text" />
@@ -248,131 +173,8 @@
           </div>
         </div>
       </form>
-      <!-- END OF LAB FORM -->
+      <!-- SERVICE FORM END -->
 
-      <!-- MEDICINE FORM -->
-      <form id="medicineForm" action="" style="display: none">
-        <div class="appointment-form-body">
-          <div class="appointment-department-selecion">
-            <label for="medicineName" for="medicineSelect">Medicine</label>
-            <select name="medicineSelect" id="medicineSelect" onchange="updateTotalPrice(this)" class="js-example-basic-single" style="width: 100%;">
-              <option value="-/">Select Medicine</option>
-              <option value="1.20">Napa 500 mg Tablet 500 mg Tablet - 1.20 BDT 
-              </option>
-              <option value="25"> Az 250 mg Tablet - 25 BDT</option>
-              <option value="8">Topium DPI 18 mcg Inhalation Capsule - 8 BDT </option>
-              <option value="10"> Vital D 2000 iu capsule - 10 BDT</option>
-              <option value="50"> Triocim 400 mg Capsule - 50 BDT</option>
-              <option value="5"> Trocer 2.6 2.6 mg Tablet - 5 BDT</option>
-              <option value="35"> T Cef 200 mg Capsule - 35 Taka</option>
-            </select>
-          </div>
-          <div class="med-available-quantity">
-            <label for="medAvailableQuantity">Quantity</label>
-            <input type="text" oninput="updateTotalPrice()" id="medAvailableQuantity" value="1" />
-        </div>
-        
-        <div class="med-available-quantity">
-            <label for="totalPricingleMed">Total Price</label>
-            <input type="text" id="totalPriceSingleMed" value="" />
-        </div>
-        
-        <div class="med-available-quantity">
-            <br>   
-            <button type="button" class="btn btn-green btn-add-medicine" onclick="medSelection()"> Add Medicine</button>
-        </div>
-        
-
- 
-          <div class="col-span-2">
-            <table class="inbound-call-table">
-              <tr class="table-row table-heading-row"> 
-                  <th><h6>Medicine Name</h6></th>
-                  <th><h6>Unit Price</h6></th>
-                  <th><h6>Quantity</h6></th>
-                  <th><h6>Total Price</h6></th>
-              </tr>
-              <!-- <tr class="table-row table-data-row">
-
-                  <td><p>Az 250 mg Tablet</p></td>
-                  <td><p>25 BDT</p></td>
-                  <td><p>4 Piece</p></td>
-                  <td><p>100 BDT</p></td>
-              </tr>
-              <tr class="table-row table-data-alt-row">
-
-                <td><p>Az 250 mg Tablet</p></td>
-                  <td><p>25 BDT</p></td>
-                  <td><p>4 Piece</p></td>
-                  <td><p>100 BDT</p></td>
-              </tr> -->
-          </table>
-          </div>
-          <div class="med-available-quantity">
-            <label for="discountMedicine">Sub Total</label>
-            <input name="discountMedicine" id="subTotal" type="text" onchange="discountCalculationMedicine(this)" value="0" />
-          </div>
-          <div class="med-available-quantity">
-            <label for="discountMedicine">Discount Percentage (%)</label>
-            <input name="discountMedicine" id="discountMedicine" type="text" onchange="discountCalculationMedicine(this)" value="0" />
-          </div>
-          <div class="med-available-quantity">
-            <label for="discountedPriceMedicine">Discount Amount</label>
-            <input type="text" name="discountedPriceMedicine" id="discountedPriceMedicine" readonly />
-          </div>
-          <div class="med-available-quantity">
-            <label for="netAmountMedicine">Net Amount</label>
-            <input type="text" name="netAmountMedicine" id="netAmountMedicine" readonly />
-          </div>
-          
-          <div class="appointment-remarks">
-            <label for="medicineRemarks">Remarks</label>
-            <input type="text" placeholder="eg. text" />
-          </div>
-          <div>
-            <div class="notification-alert">
-              <p>
-                For sending Email or SMS notification to the customer, Check the
-                notification box
-              </p>
-            </div>
-            <div class="notification-checkbox-container">
-              <p class="notification-headline">Notification</p>
-              <div>
-                <input
-                  type="checkbox"
-                  onclick="notificationCheckbox()"
-                  id="email-check-med"
-                  name="emailCheckbox"
-                />
-                <label for="emailCheckbox">Email</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  onclick="notificationCheckbox()"
-                  id="sms-check-med"
-                  name="smsCheckbox"
-                />
-                <label for="smsCheckbox">SMS</label>
-              </div>
-            </div>
-          </div>
-          <div id="email-body-med" style="display: none">
-            <div class="appointment-remarks">
-              <label for="emailBody">Email Body</label>
-              <input type="text" placeholder="eg. text" />
-            </div>
-          </div>
-          <div id="sms-body-med" style="display: none">
-            <div class="appointment-remarks">
-              <label for="emailBody">SMS Body</label>
-              <input type="text" placeholder="eg. text" />
-            </div>
-          </div>
-        </div>
-      </form>
-      <!-- MEDICINE FORM END -->
       <!-- COMPLAIN FORM -->
       <form id="complainForm" action="" style="display: none">
         <div class="appointment-form-body">
@@ -382,12 +184,8 @@
               <label for="complainType">Complaint type </label>
               <select class="js-example-basic-single" style="width: 100%;" name="complaintype" id="">
                 <option value="-/">Select Complaint type </option>
-                <option value="lab_report">Lab Service</option>
-                <option value="lab_report">Lab Report</option>
-                <option value="lab_report">Prescription</option>
-                <option value="lab_report">Appointment</option>
-                <option value="lab_report">Imaging</option>
-                <option value="lab_report">Pharmacy</option>
+                <option value="lab_report">Service</option>
+                <option value="lab_report">Flat Product Damages</option>
                 <option value="lab_report">Other</option>
               </select>
             </div>
@@ -400,12 +198,30 @@
               </select>
             </div>
             <div class="doctor-selecion">
+              <label for="complainPriority">Assign Department</label>
+              <select name="priority" class="js-example-basic-single" style="width: 100%;">
+                <option value="-/">Select Department </option>
+                <option value="marketing">Marketing</option>
+                <option value="sales">Sales</option>
+                <option value="hr">HR</option>
+              </select>
+            </div>
+            <div class="doctor-selecion">
+              <label for="complainPriority">Assign to</label>
+              <select name="priority" class="js-example-basic-single" style="width: 100%;">
+                <option value="-/">Select One </option>
+                <option value="sam">Sam</option>
+                <option value="john">Jhon</option>
+                <option value="kabir">Kabir</option>
+              </select>
+            </div>
+            <!-- <div class="doctor-selecion">
               <label for="airtable">Need to add in airtable?</label>
               <select name="labService" class="js-example-basic-single" style="width: 100%;">
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
               </select>
-            </div>
+            </div> -->
           </div>
           <div class="col-span-2">
             <div class="appointment-remarks">
@@ -427,21 +243,12 @@
             <div class="notification-checkbox-container">
               <p class="notification-headline">Notification</p>
               <div>
-                <input
-                  type="checkbox"
-                  onclick="notificationCheckbox()"
-                  id="email-check-complain"
-                  name="emailCheckbox"
-                />
+                <input type="checkbox" onclick="notificationCheckbox()" id="email-check-complain"
+                  name="emailCheckbox" />
                 <label for="emailCheckbox">Email</label>
               </div>
               <div>
-                <input
-                  type="checkbox"
-                  onclick="notificationCheckbox()"
-                  id="sms-check-complain"
-                  name="smsCheckbox"
-                />
+                <input type="checkbox" onclick="notificationCheckbox()" id="sms-check-complain" name="smsCheckbox" />
                 <label for="smsCheckbox">SMS</label>
               </div>
             </div>
@@ -461,731 +268,77 @@
         </div>
       </form>
       <!-- COMPLAIN FORM END -->
-      <!-- SERVICE FORM -->
-      <form id="serviceForm" action="" style="display: none">
-        <div class="appointment-form-body">
-          <div class="appointment-department-selecion">
-            <label for="service">Service Name</label>
-            <select name="labTest" class="js-example-basic-single" onchange="serviceSelection(this)" multiple="multiple" style="width: 100%;">
-              <option value="-/">Select Service</option>
-              <option value="2325" id="ultrasound">Ultrasound - Whole Abdomen - 2325 BDT</option>
-              <option value="725" id="x-ray">X-Ray OPG - 725 BDT</option>
-              <option value="2050" id="echocardiogram">Echocardiogram (2D Mode) - 2050 BDT</option>
-              <option value="480" id="ecg">ECG - 480 BDT</option>
-              <option value="375" id="injectionImSc">Injections IM/SC - 375 BDT</option>
-              <option value="1800" id="polishing">Polishing- 1800 BDT</option>
-              <option value="3725" id="exerciseTolerance">Exercise Tolerance Test (ETT) - 3725 BDT</option>
-              <option value="1600" id="uroflowmetry">Uroflowmetry - 1600 BDT</option>
-              <option value="1100" id="x-ray-foot">X-Ray-Foot Rt. (AP and Lateral) View - 1100 BDT</option>
-              <option value="6250" id="videoConsultation">12 Months Video Consultation Plan - 6250 BDT</option>
-              <option value="850" id="nasopharynyx">X-Ray - Nasopharynx Lateral View - 850 BDT</option>
-            </select>
-          </div>
-          <div class="med-available-quantity">
-            <label for="servicePrice">Total Price</label>
-            <input type="text" id="servicePrice" value="" />
-          </div>
-          <div class="med-available-quantity">
-            <label for="discountLabtest">Discount Percentage (%)</label>
-            <input name="discountLabtest" id="discountService" type="text" onchange="updateDiscountedPriceService(this.value)" value="0" />
-          </div>
-          <div class="med-available-quantity">
-            <label for="discountedPriceLabTest">Discount Amount</label>
-            <input type="text" name="discountedPriceLabTest" id="ServiceDiscountAmount" readonly />
-          </div>
-          <div class="med-available-quantity">
-            <label for="discountedPriceService">Net Amount</label>
-            <input type="text" name="discountedPriceService" id="discountedPriceService" readonly />
-          </div>
-          <div></div>
-          <div class="appointment-remarks">
-            <label for="labRemarks">Remarks</label>
-            <input type="text" placeholder="eg. text" />
-          </div>
-          <div>
-            <div class="notification-alert">
-              <p>
-                For sending Email or SMS notification to the customer, Check the
-                notification box
-              </p>
-            </div>
-            <div class="notification-checkbox-container">
-              <p class="notification-headline">Notification</p>
-              <div>
-                <input
-                  type="checkbox"
-                  onclick="notificationCheckbox()"
-                  id="email-check-service"
-                  name="emailCheckbox"
-                />
-                <label for="emailCheckbox">Email</label>
-              </div>
-              <div>
-                <input
-                  type="checkbox"
-                  onclick="notificationCheckbox()"
-                  id="sms-check-service"
-                  name="smsCheckbox"
-                />
-                <label for="smsCheckbox">SMS</label>
-              </div>
-            </div>
-          </div>
-          <div id="email-body-service" style="display: none">
-            <div class="appointment-remarks">
-              <label for="emailBody">Email Body</label>
-              <input type="text" placeholder="eg. text" />
-            </div>
-          </div>
-          <div id="sms-body-service" style="display: none">
-            <div class="appointment-remarks">
-              <label for="emailBody">SMS Body</label>
-              <input type="text" placeholder="eg. text" />
-            </div>
-          </div>
-        </div>
-      </form>
-      <!-- SERVICE FORM END -->
-      <!-- There Won't be any form for Information type -->
-            <!-- ONE TIME PAYMENT FORM -->
-            <form id="oneTimePaymentForm" action="" style="display: none">
-              <div class="appointment-form-body">
-                <div class="appointment-department-selecion">
-                  <label for="medicineName">Payment Status</label>
-                  <select name="labTest" class="js-example-basic-single" style="width: 100%;">
-                    <option value="unpaid">Unpaid</option>
-                    <option value="pending">Pending</option>
-                    <option value="complete">Complete</option>
-                    <option value="paid">Paid</option>
-                    <option value="canceled">Canceled</option>
-                    <option value="failed">Failed</option>
-                  </select>
-                </div>
-                <div class="appointment-department-selecion">
-                  <label for="medicineName">Payment Method</label>
-                  <select name="labTest" class="js-example-basic-single" style="width: 100%;">
-                    <option value="-/">Select Payment Type</option>
-                    <option value="sslcommerz">SslCommerz</option>
-                    <option value="cash">Cash</option>
-                  </select>
-                </div>
-                <div class="appointment-department-selection">
-                  <label for="service-radiobutton">Select</label>
-                  <div class="service-radiobutton">
-                    <input  onchange="serviceForm(this)" type="radio" id="serviceRad" name="selectService" value="service" />
-                    <label  class="radioButtonLabel" for="serviceRad">Service</label>   
-                    <input onchange="serviceForm(this)" type="radio" id="otherRad" name="selectService" value="others" />
-                    <label for="otherRad">Others</label>   
-                  </div>
-                </div>
-                <div id="service-selection" style="display: none;">
-                  <div class="appointment-department-selecion">
-                    <label for="medicineName">Service</label>
-                    <select name="labTest" class="js-example-basic-single" onchange="serviceSelection(this)" multiple="multiple" style="width: 100%;">
-                      <option value="-/">Select Service</option>
-                      <option value="2325" id="ultrasound">Ultrasound - Whole Abdomen - 2325 BDT</option>
-                      <option value="725" id="x-ray">X-Ray OPG - 725 BDT</option>
-                      <option value="2050" id="echocardiogram">Echocardiogram (2D Mode) - 2050 BDT</option>
-                      <option value="480" id="ecg">ECG - 480 BDT</option>
-                      <option value="375" id="injectionImSc">Injections IM/SC - 375 BDT</option>
-                      <option value="1800" id="polishing">Polishing- 1800 BDT</option>
-                      <option value="3725" id="exerciseTolerance">Exercise Tolerance Test (ETT) - 3725 BDT</option>
-                      <option value="1600" id="uroflowmetry">Uroflowmetry - 1600 BDT</option>
-                      <option value="1100" id="x-ray-foot">X-Ray-Foot Rt. (AP and Lateral) View - 1100 BDT</option>
-                      <option value="6250" id="videoConsultation">12 Months Video Consultation Plan - 6250 BDT</option>
-                      <option value="850" id="nasopharynyx">X-Ray - Nasopharynx Lateral View - 850 BDT</option>
-                    </select>
-                  </div>
-                </div>
-               <div id="others-selection" style="display: none;">
-                <div class="med-available-quantity">
-                  <label for="medicineQuantity">Input Description</label>
-                  <input type="text" placeholder="Eg. Text" />
-                </div>
-               </div>
-               <div class="med-available-quantity">
-                <label for="medicineQuantity">Gross Amount</label>
-                <input type="text" value="0" />
-              </div>
-              <div class="med-available-quantity">
-                <label for="medicineQuantity">Net Amount</label>
-                <input readonly type="text" value="0" />
-              </div>
-              </div>
-            </form>
-             <!-- ONE TIME PAYMENT FORM -->
-      <!-- NFS RESPONSE -->
-      <div id="npsResponseTab" style="display: none;">
-        <br>
-        <select
-        id="ticketDropdown"
-        class="ticket-dropdown"
-        onchange="npsDropdownSelect(this)"
-        name=""
-      >
-        <option class="ticket-dropdown-option" value="no">NPS RESPONSE NO</option>
-        <option class="ticket-dropdown-option" value="yes">NPS RESPONSE YES</option>
-      </select>
-      <br>
-      <form id="nps-response-form-yes" action="" style="display: none">
-        <div class="appointment-form-body">
-          <div class="med-available-quantity">
-            <label for="medicineQuantity">Receiver's relation with the patient</label>
-            <input type="text" placeholder="Eg. Mother" />
-          </div>
-          <div class="interaction-department-selecion">
-            <label for="complainType">Who did you interact with? </label>
-            <select class="js-example-basic-single" style="width: 100%;" name="complaintype" id="">
-              <option value="-/">Select Role </option>
-              <option value="lab_report">Security Team</option>
-              <option value="lab_report">Nursing</option>
-              <option value="lab_report">Doctor / specialist (In person)</option>
-              <option value="lab_report">Doctor / specialist (Video Consultation)</option>
-              <option value="lab_report"> Blood Sample Collection Team </option>
-              <option value="lab_report"> X-ray, ETT, Echo, USG Team </option>
-              <option value="lab_report"> Pharmacy </option>
-              <option value="lab_report">Contact Center</option>
-              <option value="lab_report">reception Team (Front desk / Praava guide)</option>
-            </select>
-          </div>
-          <div class="col-span-2">
-            <div class="nps-feedback">
-              <!-- INSIDE NPS-FEEDBACK -->
-              <!-- FEEDBACK LABEL -->
-              <label for="compain">NPS Rating Provided (Overall rating)</label>
-              <!-- FEEDBACK CARD -->
-              <div class="feedback-card">
-                <div class="radio-group">
-                    <input type="radio" id="rating1" name="rating" value="1">
-                    <label for="rating1">Poor</label>
-        
-                    <input type="radio" id="rating2" name="rating" value="2">
-                    <label for="rating2">2</label>
-        
-                    <input type="radio" id="rating3" name="rating" value="3">
-                    <label for="rating3">3</label>
-        
-                    <input type="radio" id="rating4" name="rating" value="4">
-                    <label for="rating4">4</label>
-        
-                    <input type="radio" id="rating5" name="rating" value="5">
-                    <label for="rating5">5</label>
-        
-                    <input type="radio" id="rating6" name="rating" value="6">
-                    <label for="rating6">6</label>
-        
-                    <input type="radio" id="rating7" name="rating" value="7">
-                    <label for="rating7">7</label>
-        
-                    <input type="radio" id="rating8" name="rating" value="8">
-                    <label for="rating8">8</label>
-        
-                    <input type="radio" id="rating9" name="rating" value="9">
-                    <label for="rating9">9</label>
-        
-                    <input type="radio" id="rating10" name="rating" value="10">
-                    <label for="rating10">Excellent</label>
-                </div>
-            </div>
-            <!-- FEEDBACK CARD ENDS-->
-              
-            </div>
-            <div class="nps-feedback">
-              <!-- INSIDE NPS-FEEDBACK -->
-              <!-- FEEDBACK LABEL -->
-              <label for="compain">How satisfied are you with our security guard team?</label>
-              <!-- FEEDBACK CARD -->
-              <div class="feedback-card">
-                <div class="radio-group">
-                    <input type="radio" id="rating1" name="rating" value="1">
-                    <label for="rating1">Poor</label>
-        
-                    <input type="radio" id="rating2" name="rating" value="2">
-                    <label for="rating2">2</label>
-        
-                    <input type="radio" id="rating3" name="rating" value="3">
-                    <label for="rating3">3</label>
-        
-                    <input type="radio" id="rating4" name="rating" value="4">
-                    <label for="rating4">4</label>
-        
-                    <input type="radio" id="rating5" name="rating" value="5">
-                    <label for="rating5">5</label>
-        
-                    <input type="radio" id="rating6" name="rating" value="6">
-                    <label for="rating6">6</label>
-        
-                    <input type="radio" id="rating7" name="rating" value="7">
-                    <label for="rating7">7</label>
-        
-                    <input type="radio" id="rating8" name="rating" value="8">
-                    <label for="rating8">8</label>
-        
-                    <input type="radio" id="rating9" name="rating" value="9">
-                    <label for="rating9">9</label>
-        
-                    <input type="radio" id="rating10" name="rating" value="10">
-                    <label for="rating10">Excellent</label>
-                </div>
-            </div>
-            <!-- FEEDBACK CARD ENDS-->
-              
-            </div>
-            <div class="nps-feedback">
-              <!-- INSIDE NPS-FEEDBACK -->
-              <!-- FEEDBACK LABEL -->
-              <label for="compain"> How satisfied are you with our reception team (front desk/Praava guide)?</label>
-              <!-- FEEDBACK CARD -->
-              <div class="feedback-card">
-                <div class="radio-group">
-                    <input type="radio" id="rating1" name="rating" value="1">
-                    <label for="rating1">Poor</label>
-        
-                    <input type="radio" id="rating2" name="rating" value="2">
-                    <label for="rating2">2</label>
-        
-                    <input type="radio" id="rating3" name="rating" value="3">
-                    <label for="rating3">3</label>
-        
-                    <input type="radio" id="rating4" name="rating" value="4">
-                    <label for="rating4">4</label>
-        
-                    <input type="radio" id="rating5" name="rating" value="5">
-                    <label for="rating5">5</label>
-        
-                    <input type="radio" id="rating6" name="rating" value="6">
-                    <label for="rating6">6</label>
-        
-                    <input type="radio" id="rating7" name="rating" value="7">
-                    <label for="rating7">7</label>
-        
-                    <input type="radio" id="rating8" name="rating" value="8">
-                    <label for="rating8">8</label>
-        
-                    <input type="radio" id="rating9" name="rating" value="9">
-                    <label for="rating9">9</label>
-        
-                    <input type="radio" id="rating10" name="rating" value="10">
-                    <label for="rating10">Excellent</label>
-                </div>
-            </div>
-            <!-- FEEDBACK CARD ENDS-->
-              
-            </div>
-            <div class="nps-feedback">
-              <!-- INSIDE NPS-FEEDBACK -->
-              <!-- FEEDBACK LABEL -->
-              <label for="compain">From 1 to 10, how satisfied are you with our nurse?</label>
-              <!-- FEEDBACK CARD -->
-              <div class="feedback-card">
-                <div class="radio-group">
-                    <input type="radio" id="rating1" name="rating" value="1">
-                    <label for="rating1">Poor</label>
-        
-                    <input type="radio" id="rating2" name="rating" value="2">
-                    <label for="rating2">2</label>
-        
-                    <input type="radio" id="rating3" name="rating" value="3">
-                    <label for="rating3">3</label>
-        
-                    <input type="radio" id="rating4" name="rating" value="4">
-                    <label for="rating4">4</label>
-        
-                    <input type="radio" id="rating5" name="rating" value="5">
-                    <label for="rating5">5</label>
-        
-                    <input type="radio" id="rating6" name="rating" value="6">
-                    <label for="rating6">6</label>
-        
-                    <input type="radio" id="rating7" name="rating" value="7">
-                    <label for="rating7">7</label>
-        
-                    <input type="radio" id="rating8" name="rating" value="8">
-                    <label for="rating8">8</label>
-        
-                    <input type="radio" id="rating9" name="rating" value="9">
-                    <label for="rating9">9</label>
-        
-                    <input type="radio" id="rating10" name="rating" value="10">
-                    <label for="rating10">Excellent</label>
-                </div>
-            </div>
-            <!-- FEEDBACK CARD ENDS-->
-            </div>
-            <div class="nps-feedback">
-              <!-- INSIDE NPS-FEEDBACK -->
-              <!-- FEEDBACK LABEL -->
-              <label for="compain">From 1 to 10, how satisfied are you with our doctor/specialist (video consultation) services?</label>
-              <!-- FEEDBACK CARD -->
-              <div class="feedback-card">
-                <div class="radio-group">
-                    <input type="radio" id="rating1" name="rating" value="1">
-                    <label for="rating1">Poor</label>
-        
-                    <input type="radio" id="rating2" name="rating" value="2">
-                    <label for="rating2">2</label>
-        
-                    <input type="radio" id="rating3" name="rating" value="3">
-                    <label for="rating3">3</label>
-        
-                    <input type="radio" id="rating4" name="rating" value="4">
-                    <label for="rating4">4</label>
-        
-                    <input type="radio" id="rating5" name="rating" value="5">
-                    <label for="rating5">5</label>
-        
-                    <input type="radio" id="rating6" name="rating" value="6">
-                    <label for="rating6">6</label>
-        
-                    <input type="radio" id="rating7" name="rating" value="7">
-                    <label for="rating7">7</label>
-        
-                    <input type="radio" id="rating8" name="rating" value="8">
-                    <label for="rating8">8</label>
-        
-                    <input type="radio" id="rating9" name="rating" value="9">
-                    <label for="rating9">9</label>
-        
-                    <input type="radio" id="rating10" name="rating" value="10">
-                    <label for="rating10">Excellent</label>
-                </div>
-            </div>
-            <!-- FEEDBACK CARD ENDS-->
-            </div>
-            <div class="nps-feedback">
-              <!-- INSIDE NPS-FEEDBACK -->
-              <!-- FEEDBACK LABEL -->
-              <label for="compain">From 1 to 10, how satisfied are you with our blood/sample collection team?</label>
-              <!-- FEEDBACK CARD -->
-              <div class="feedback-card">
-                <div class="radio-group">
-                    <input type="radio" id="rating1" name="rating" value="1">
-                    <label for="rating1">Poor</label>
-        
-                    <input type="radio" id="rating2" name="rating" value="2">
-                    <label for="rating2">2</label>
-        
-                    <input type="radio" id="rating3" name="rating" value="3">
-                    <label for="rating3">3</label>
-        
-                    <input type="radio" id="rating4" name="rating" value="4">
-                    <label for="rating4">4</label>
-        
-                    <input type="radio" id="rating5" name="rating" value="5">
-                    <label for="rating5">5</label>
-        
-                    <input type="radio" id="rating6" name="rating" value="6">
-                    <label for="rating6">6</label>
-        
-                    <input type="radio" id="rating7" name="rating" value="7">
-                    <label for="rating7">7</label>
-        
-                    <input type="radio" id="rating8" name="rating" value="8">
-                    <label for="rating8">8</label>
-        
-                    <input type="radio" id="rating9" name="rating" value="9">
-                    <label for="rating9">9</label>
-        
-                    <input type="radio" id="rating10" name="rating" value="10">
-                    <label for="rating10">Excellent</label>
-                </div>
-            </div>
-            <!-- FEEDBACK CARD ENDS-->
-            </div>
-            <div class="nps-feedback">
-              <!-- INSIDE NPS-FEEDBACK -->
-              <!-- FEEDBACK LABEL -->
-              <label for="compain">From 1 to 10, how satisfied are you with our X-ray, ETT, ECHO, and/or USG team?</label>
-              <!-- FEEDBACK CARD -->
-              <div class="feedback-card">
-                <div class="radio-group">
-                    <input type="radio" id="rating1" name="rating" value="1">
-                    <label for="rating1">Poor</label>
-        
-                    <input type="radio" id="rating2" name="rating" value="2">
-                    <label for="rating2">2</label>
-        
-                    <input type="radio" id="rating3" name="rating" value="3">
-                    <label for="rating3">3</label>
-        
-                    <input type="radio" id="rating4" name="rating" value="4">
-                    <label for="rating4">4</label>
-        
-                    <input type="radio" id="rating5" name="rating" value="5">
-                    <label for="rating5">5</label>
-        
-                    <input type="radio" id="rating6" name="rating" value="6">
-                    <label for="rating6">6</label>
-        
-                    <input type="radio" id="rating7" name="rating" value="7">
-                    <label for="rating7">7</label>
-        
-                    <input type="radio" id="rating8" name="rating" value="8">
-                    <label for="rating8">8</label>
-        
-                    <input type="radio" id="rating9" name="rating" value="9">
-                    <label for="rating9">9</label>
-        
-                    <input type="radio" id="rating10" name="rating" value="10">
-                    <label for="rating10">Excellent</label>
-                </div>
-            </div>
-            <!-- FEEDBACK CARD ENDS-->
-            </div>
-            <div class="nps-feedback">
-              <!-- INSIDE NPS-FEEDBACK -->
-              <!-- FEEDBACK LABEL -->
-              <label for="compain">From 1 to 10, how satisfied are you with our pharmacy team?</label>
-              <!-- FEEDBACK CARD -->
-              <div class="feedback-card">
-                <div class="radio-group">
-                    <input type="radio" id="rating1" name="rating" value="1">
-                    <label for="rating1">Poor</label>
-        
-                    <input type="radio" id="rating2" name="rating" value="2">
-                    <label for="rating2">2</label>
-        
-                    <input type="radio" id="rating3" name="rating" value="3">
-                    <label for="rating3">3</label>
-        
-                    <input type="radio" id="rating4" name="rating" value="4">
-                    <label for="rating4">4</label>
-        
-                    <input type="radio" id="rating5" name="rating" value="5">
-                    <label for="rating5">5</label>
-        
-                    <input type="radio" id="rating6" name="rating" value="6">
-                    <label for="rating6">6</label>
-        
-                    <input type="radio" id="rating7" name="rating" value="7">
-                    <label for="rating7">7</label>
-        
-                    <input type="radio" id="rating8" name="rating" value="8">
-                    <label for="rating8">8</label>
-        
-                    <input type="radio" id="rating9" name="rating" value="9">
-                    <label for="rating9">9</label>
-        
-                    <input type="radio" id="rating10" name="rating" value="10">
-                    <label for="rating10">Excellent</label>
-                </div>
-            </div>
-            <!-- FEEDBACK CARD ENDS-->
-            </div>
-            <div class="nps-feedback">
-              <!-- INSIDE NPS-FEEDBACK -->
-              <!-- FEEDBACK LABEL -->
-              <label for="compain">From 1 to 10, how satisfied are you with our contact center team?</label>
-              <!-- FEEDBACK CARD -->
-              <div class="feedback-card">
-                <div class="radio-group">
-                    <input type="radio" id="rating1" name="rating" value="1">
-                    <label for="rating1">Poor</label>
-        
-                    <input type="radio" id="rating2" name="rating" value="2">
-                    <label for="rating2">2</label>
-        
-                    <input type="radio" id="rating3" name="rating" value="3">
-                    <label for="rating3">3</label>
-        
-                    <input type="radio" id="rating4" name="rating" value="4">
-                    <label for="rating4">4</label>
-        
-                    <input type="radio" id="rating5" name="rating" value="5">
-                    <label for="rating5">5</label>
-        
-                    <input type="radio" id="rating6" name="rating" value="6">
-                    <label for="rating6">6</label>
-        
-                    <input type="radio" id="rating7" name="rating" value="7">
-                    <label for="rating7">7</label>
-        
-                    <input type="radio" id="rating8" name="rating" value="8">
-                    <label for="rating8">8</label>
-        
-                    <input type="radio" id="rating9" name="rating" value="9">
-                    <label for="rating9">9</label>
-        
-                    <input type="radio" id="rating10" name="rating" value="10">
-                    <label for="rating10">Excellent</label>
-                </div>
-            </div>
-            <!-- FEEDBACK CARD ENDS-->
-            </div>
-          </div>
-        </form>
-          <div class="appointment-remarks col-span-2">
-            <label for="labRemarks">Additional Comments for improvement</label>
-            <input type="text" placeholder="eg. text" />
-          </div>
-          <div class="appointment-department-selecion align-self-start">
-            <label for="complainType">Feedback category </label>
-            <select class="complain-dropdown" name="complaintype" id="">
-              <option value="-/">select feedback category </option>
-              <option value="lab_report">Compliment</option>
-              <option value="lab_report">Suggestion </option>
-              <option value="lab_report">Negative Feedback </option>
-              <option value="lab_report">Complain and Suggestion </option>
-              <option value="lab_report">Negative Feedback and Suggestion </option>
-              <option value="lab_report">No Comment </option>
-            </select>
-          </div>
-          </div>
-        </div>
-      </form>
-      <!-- NFS RESPONSE END -->
-      <!-- NON COVID HSC AUDIT QUESTIONNARE -->
-      <form id="covidFrom" action="" style="display: none;">
-       <div class="appointment-form-body">
 
-         <div class="appointment-department-selecion">
-           <label class="lable-input" for="service">Name of the sample collector</label>
-           <select name="sampleCollector" class="js-example-basic-single" style="width: 100%;">
-             <option value="-/">Select sample collector</option>
-             <option value="luffy">Md. Habibuzzaman</option>
-             <option value="luffy">Amir Hoossain</option>
-             <option value="luffy">Abdullah Al Jakaria</option>
-             <option value="luffy">Md. Dabirul Islam</option>
-             <option value="luffy">Md. Abu Saeed</option>
-             <option value="luffy">Dulal Gain</option>
-             <option value="luffy">Md. Shohel Khan</option>
-             <option value="luffy">Md. Faysal Sarkar Piyal</option>
-             <option value="luffy">Md. Sayed Anowar</option>
-             <option value="luffy">Bulbul Hossain Talukder</option>
-             <option value="luffy">Nur Hossain</option>
-           </select>
-         </div>
-         <div class="med-available-quantity">
-           <label for="servicePrice">Sample Collection Date</label>
-           <input type="date" />
-          </div>
+      <!-- There Won't be any form for Information type -->
+      <!-- ONE TIME PAYMENT FORM -->
+      <form id="oneTimePaymentForm" action="" style="display: none">
+        <div class="appointment-form-body">
           <div class="appointment-department-selecion">
-            <label class="lable-input" for="service">Feedback Status</label>
-            <select name="callStatus" onchange="covidDropdownSelect(this)" class="js-example-basic-single" style="width: 100%;">
-              <option value="noFeedback">Call successful but no feedback</option>
-              <option value="feedback">Call successful and received feedback</option>
+            <label for="medicineName">Payment Status</label>
+            <select name="labTest" class="js-example-basic-single" style="width: 100%;">
+              <option value="unpaid">Unpaid</option>
+              <option value="pending">Pending</option>
+              <option value="complete">Complete</option>
+              <option value="paid">Paid</option>
+              <option value="canceled">Canceled</option>
+              <option value="failed">Failed</option>
             </select>
           </div>
-            <div class="questions" id="questionsContainer" style="display: none;">
-              <div class="question">
-                <p>Did the collector identify the patient and test names before collections?</p>
-                <div class="answers">
-                  <input type="radio" id="testNameNo" name="testName" value="email" />
-                  <label class="radioButtonLabel" for="testNameNo">No</label>   
-                  <input type="radio" id="testNameYes" name="testName" value="email" />
-                  <label for="testNameYes">Yes</label>   
-                </div>
-              </div>
-              <div class="question">
-                <p>Did the sample collector explain the procedure to the patient?</p>
-                <div class="answers">
-                  <input type="radio" id="testNameNo" name="testName" value="email" />
-                  <label class="radioButtonLabel" for="testNameNo">No</label>   
-                  <input type="radio" id="testNameYes" name="testName" value="email" />
-                  <label for="testNameYes">Yes</label>   
-                </div>
-              </div>
-              <div class="question">
-                <p>Did the patient feel any discomfort during collection?</p>
-                <div class="answers">
-                  <input type="radio" id="testNameNo" name="testName" value="email" />
-                  <label class="radioButtonLabel" for="testNameNo">No</label>   
-                  <input type="radio" id="testNameYes" name="testName" value="email" />
-                  <label for="testNameYes">Yes</label>   
-                </div>
-              </div>
-              <div class="question">
-                <p>Did the sample collector provide project-list?</p>
-                <div class="answers">
-                  <input type="radio" id="testNameNo" name="testName" value="email" />
-                  <label class="radioButtonLabel" for="testNameNo">No</label>   
-                  <input type="radio" id="testNameYes" name="testName" value="email" />
-                  <label for="testNameYes">Yes</label>   
-                </div>
-              </div>
-              <div class="question">
-                <p>Was the sample collector well behaved/ grommed?</p>
-                <div class="answers">
-                  <input type="radio" id="testNameNo" name="testName" value="email" />
-                  <label class="radioButtonLabel" for="testNameNo">No</label>   
-                  <input type="radio" id="testNameYes" name="testName" value="email" />
-                  <label for="testNameYes">Yes</label>   
-                </div>
-              </div>
-              <div class="question">
-                <p>Was the sample collected within the expected time?</p>
-                <div class="answers">
-                  <input type="radio" id="testNameNo" name="testName" value="email" />
-                  <label class="radioButtonLabel" for="testNameNo">No</label>   
-                  <input type="radio" id="testNameYes" name="testName" value="email" />
-                  <label for="testNameYes">Yes</label>   
-                </div>
-              </div>
-              <div class="question">
-                <p>Did the sample collector explain the report delivery process, date and time?</p>
-                <div class="answers">
-                  <input type="radio" id="testNameNo" name="testName" value="email" />
-                  <label class="radioButtonLabel" for="testNameNo">No</label>   
-                  <input type="radio" id="testNameYes" name="testName" value="email" />
-                  <label for="testNameYes">Yes</label>   
-                </div>
-              </div>
-              <div class="question">
-                <p>Did the sample collector ask for any patient identification?</p>
-                <div class="answers">
-                  <input type="radio" id="testNameNo" name="testName" value="email" />
-                  <label class="radioButtonLabel" for="testNameNo">No</label>   
-                  <input type="radio" id="testNameYes" name="testName" value="email" />
-                  <label for="testNameYes">Yes</label>   
-                </div>
-              </div>
-              <div class="nps-feedback">
-                <!-- INSIDE NPS-FEEDBACK -->
-                <!-- FEEDBACK LABEL -->
-                <label for="compain">NPS Rating Provided (Overall rating)</label>
-                <!-- FEEDBACK CARD -->
-                <div class="feedback-card">
-                  <div class="radio-group">
-                      <input type="radio" id="rating1" name="rating" value="1">
-                      <label for="rating1">Poor</label>
-          
-                      <input type="radio" id="rating2" name="rating" value="2">
-                      <label for="rating2">2</label>
-          
-                      <input type="radio" id="rating3" name="rating" value="3">
-                      <label for="rating3">3</label>
-          
-                      <input type="radio" id="rating4" name="rating" value="4">
-                      <label for="rating4">4</label>
-          
-                      <input type="radio" id="rating5" name="rating" value="5">
-                      <label for="rating5">5</label>
-          
-                      <input type="radio" id="rating6" name="rating" value="6">
-                      <label for="rating6">6</label>
-          
-                      <input type="radio" id="rating7" name="rating" value="7">
-                      <label for="rating7">7</label>
-          
-                      <input type="radio" id="rating8" name="rating" value="8">
-                      <label for="rating8">8</label>
-          
-                      <input type="radio" id="rating9" name="rating" value="9">
-                      <label for="rating9">9</label>
-          
-                      <input type="radio" id="rating10" name="rating" value="10">
-                      <label for="rating10">Excellent</label>
-                  </div>
-              </div>
-              </div>
-              <div class="appointment-remarks  col-span-2">
-                <label for="covidRemarks">Additional Comments for improvement</label>
-                <input type="text" placeholder="eg. text" />
-              </div>
+          <div class="appointment-department-selecion">
+            <label for="medicineName">Payment Method</label>
+            <select name="labTest" class="js-example-basic-single" style="width: 100%;">
+              <option value="-/">Select Payment Type</option>
+              <option value="sslcommerz">SslCommerz</option>
+              <option value="cash">Cash</option>
+            </select>
+          </div>
+          <div class="appointment-department-selection">
+            <label for="service-radiobutton">Select</label>
+            <div class="service-radiobutton">
+              <input onchange="serviceForm(this)" type="radio" id="serviceRad" name="selectService" value="service" />
+              <label class="radioButtonLabel" for="serviceRad">Service</label>
+              <input onchange="serviceForm(this)" type="radio" id="otherRad" name="selectService" value="others" />
+              <label for="otherRad">Others</label>
             </div>
+          </div>
+          <div id="service-selection" style="display: none;">
+            <div class="appointment-department-selecion">
+              <label for="medicineName">Service</label>
+              <select name="labTest" class="js-example-basic-single" onchange="serviceSelection(this)"
+                multiple="multiple" style="width: 100%;">
+                <option value="-/">Select Service</option>
+                <option value="2325" id="ultrasound">Ultrasound - Whole Abdomen - 2325 BDT</option>
+                <option value="725" id="x-ray">X-Ray OPG - 725 BDT</option>
+                <option value="2050" id="echocardiogram">Echocardiogram (2D Mode) - 2050 BDT</option>
+                <option value="480" id="ecg">ECG - 480 BDT</option>
+                <option value="375" id="injectionImSc">Injections IM/SC - 375 BDT</option>
+                <option value="1800" id="polishing">Polishing- 1800 BDT</option>
+                <option value="3725" id="exerciseTolerance">Exercise Tolerance Test (ETT) - 3725 BDT</option>
+                <option value="1600" id="uroflowmetry">Uroflowmetry - 1600 BDT</option>
+                <option value="1100" id="x-ray-foot">X-Ray-Foot Rt. (AP and Lateral) View - 1100 BDT</option>
+                <option value="6250" id="videoConsultation">12 Months Video Consultation Plan - 6250 BDT</option>
+                <option value="850" id="nasopharynyx">X-Ray - Nasopharynx Lateral View - 850 BDT</option>
+              </select>
+            </div>
+          </div>
+          <div id="others-selection" style="display: none;">
+            <div class="med-available-quantity">
+              <label for="medicineQuantity">Input Description</label>
+              <input type="text" placeholder="Eg. Text" />
+            </div>
+          </div>
+          <div class="med-available-quantity">
+            <label for="medicineQuantity">Gross Amount</label>
+            <input type="text" value="0" />
+          </div>
+          <div class="med-available-quantity">
+            <label for="medicineQuantity">Net Amount</label>
+            <input readonly type="text" value="0" />
+          </div>
         </div>
       </form>
-      <!-- NON COVID HSC AUDIT QUESTIONNARE END -->
+      <!-- ONE TIME PAYMENT FORM -->
+
       <!-- OTHER FORM -->
       <form id="otherForm" action="" style="display: none">
         <div class="appointment-form-body">
@@ -1203,21 +356,11 @@
             <div class="notification-checkbox-container">
               <p class="notification-headline">Notification</p>
               <div>
-                <input
-                  type="checkbox"
-                  onclick="notificationCheckbox()"
-                  id="email-check-others"
-                  name="emailCheckbox"
-                />
+                <input type="checkbox" onclick="notificationCheckbox()" id="email-check-others" name="emailCheckbox" />
                 <label for="emailCheckbox">Email</label>
               </div>
               <div>
-                <input
-                  type="checkbox"
-                  onclick="notificationCheckbox()"
-                  id="sms-check-others"
-                  name="smsCheckbox"
-                />
+                <input type="checkbox" onclick="notificationCheckbox()" id="sms-check-others" name="smsCheckbox" />
                 <label for="smsCheckbox">SMS</label>
               </div>
             </div>
@@ -1242,19 +385,7 @@
 
     <footer class="section">
       <form action="" class="footer-form">
-        <div class="appointment-department-selecion">
-          <label class="form-label" for="department">Intend Category</label>
-          <select
-            name="doctorDepartment"
-            class="js-example-basic-single"
-            style="width: 100%"
-          >
-            <option value="-/">Select intend call category</option>
-            <option value="high">High</option>
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-          </select>
-        </div>
+
         <div class="form-input form-input-sum">
           <label class="form-label" for="call_summary"> Call summary</label>
           <input class="form-input-field" type="text" placeholder="eg. text" />
@@ -1268,19 +399,20 @@
       </form>
     </footer>
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-<script>
-  $(document).ready(function() {
-    $('.js-example-basic-single').select2();
-});
-$(document).ready(function() {
-  $('.btn').on('click', function(event) {
-    event.preventDefault(); // Prevents the default action of the anchor tag
+    <script>
+      $(document).ready(function () {
+        $('.js-example-basic-single').select2();
+      });
+      $(document).ready(function () {
+        $('.btn').on('click', function (event) {
+          event.preventDefault(); // Prevents the default action of the anchor tag
 
-    // Change the color of the clicked anchor to grayish
-    $(this).css('background-color', 'gray');
-  });
-});
-</script>
+          // Change the color of the clicked anchor to grayish
+          $(this).css('background-color', 'gray');
+        });
+      });
+    </script>
 
   </body>
+
 </html>
