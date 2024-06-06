@@ -1,0 +1,86 @@
+.flat-container {
+    margin: 20px 0;
+}
+
+.flat-section {
+    display: flex;
+    justify-content: space-around;
+}
+
+.flat-details {
+    display: none;
+    margin-top: 20px;
+}
+
+.flat-details.active {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flat-map {
+    display: flex;
+    padding: 10px;
+}
+
+.flat {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    line-height: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.flat.available {
+    background-color: #fff;
+}
+
+.flat.selected {
+    background-color: #df7427e6;
+}
+
+.flat.selected-tag {
+    background-color: #df7427e6;
+}
+
+.flat.incomplete {
+    background-color: #f44336;
+}
+
+.flat.ongoing {
+    background-color: #def436;
+}
+
+.flat.booked {
+    background-color: #4CAF50;
+}
+
+.flat.proposed {
+    background-color: #36a5e1;
+}
+
+.flat-info {
+    width: 100%;
+    padding: 20px;
+    text-align: left;
+}
+
+.flat-desc {
+    margin: 10px;
+    font-size: 1rem;
+}
+
+.focused {
+    color: var(--purple-hover);
+    font-weight: 700;
+}
+
+.center {
+    text-align: center;
+}
+
+.bold {
+    font-weight: 700;
+}

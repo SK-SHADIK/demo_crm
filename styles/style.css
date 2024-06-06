@@ -37,11 +37,13 @@
     min-width: 100%;
 }
 
-.table-row {
+.table-row,
+.table-header-row {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 1rem 0;
+    cursor: pointer;
 }
 
 .table-heading-row {
@@ -59,7 +61,8 @@
     background-color: #d6d6d6;
 }
 
-.table-row th h6 {
+.table-row th h6,
+.table-header-row th h6 {
     color: var(--white);
 }
 

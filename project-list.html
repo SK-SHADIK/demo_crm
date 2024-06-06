@@ -14,10 +14,10 @@
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/project-list.css" />
     <!-- CUSTOM JS -->
     <script src="script.js"></script>
   </head>
-
   <body>
     <!-- Naivigation -->
     <nav class="section">
@@ -44,7 +44,7 @@
       <br />
       <div class="inbound-call-list">
         <table class="inbound-call-table">
-          <tr class="table-row table-heading-row">
+          <tr class="table-header-row table-heading-row">
             <th>
               <h6>Project Name</h6>
             </th>
@@ -76,7 +76,7 @@
               <h6>Email</h6>
             </th>
           </tr>
-          <tr class="table-row table-data-row">
+          <tr class="table-row table-data-row" data-id="1">
             <td>
               <p>Baridhara J Block</p>
             </td>
@@ -91,7 +91,7 @@
               <p>900<sub>(sq. ft)</sub></p>
             </td>
             <td>
-              <p>1200<sub>(sq. ft)</sub></p>
+              <p>1800<sub>(sq. ft)</sub></p>
             </td>
             <td>
               <p>01-Aug-2024</p>
@@ -109,7 +109,7 @@
             <td><a href=""><img class="ion-icon ion-icon-link" src="Resources/icons/send-outline.svg" alt="icon"></a>
             </td>
           </tr>
-          <tr class="table-row table-data-alt-row">
+          <tr class="table-row table-data-alt-row" data-id="2">
             <td>
               <p>Baridhara A Block</p>
             </td>
@@ -123,7 +123,7 @@
               <p>1000<sub>(sq. ft)</sub></p>
             </td>
             <td>
-              <p>1600<sub>(sq. ft)</sub></p>
+              <p>1900<sub>(sq. ft)</sub></p>
             </td>
             <td>
               <p>01-Jul-2024</p>
@@ -141,7 +141,7 @@
             <td><a href=""><img class="ion-icon ion-icon-link" src="Resources/icons/send-outline.svg" alt="icon"></a>
             </td>
           </tr>
-          <tr class="table-row table-data-row">
+          <tr class="table-row table-data-row" data-id="3">
             <td>
               <p>Rampura Shawpno Nir</p>
             </td>
@@ -156,7 +156,7 @@
               <p>800<sub>(sq. ft)</sub></p>
             </td>
             <td>
-              <p>1100<sub>(sq. ft)</sub></p>
+              <p>1200<sub>(sq. ft)</sub></p>
             </td>
             <td>
               <p>01-Oct-2024</p>
@@ -174,7 +174,7 @@
             <td><a href=""><img class="ion-icon ion-icon-link" src="Resources/icons/send-outline.svg" alt="icon"></a>
             </td>
           </tr>
-          <tr class="table-row table-data-alt-row">
+          <tr class="table-row table-data-alt-row" data-id="4">
             <td>
               <p>Purbachol</p>
             </td>
@@ -242,6 +242,8 @@
         <button class="btn btn-primary btn-save-info">Save Information</button>
       </form>
     </footer>
+
+    <script src="scripts/project-list.js"></script>
   </body>
 
 </html>
