@@ -271,6 +271,10 @@ th {
     color: var(--purple-light);
     font-weight: 700;
 }
+.due-color{
+    color: #ff0000;
+    font-weight: 700;
+}
 @media screen and (max-width:1150px) and (min-width:500px) {
     .phbl {
         margin-left: 19rem;
