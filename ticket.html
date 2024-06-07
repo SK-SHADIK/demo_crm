@@ -17,6 +17,7 @@
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/project-list.css" />
     <!-- CUSTOM JS -->
     <script src="script.js"></script>
   </head>
@@ -25,10 +26,12 @@
     <!-- Naivigation -->
     <nav class="section">
       <ul class="nav-menu">
-        <li class=""><a href="client-details.html">Details</a></li>
+        <li class=""><a href="patientdetails.html">Details</a></li>
         <li><a href="calllog.html">Log</a></li>
-        <li><a href="project-list.html">Project List</a></li>
-        <li><a href="purchase-list.html">Purchase List</a></li>
+        <li><a href="invoice.html">Invoice</a></li>
+        <li><a href="labtest.html">Lab Test</a></li>
+        <li><a href="servicelist.html">Health Check</a></li>
+        <li><a href="consultation.html">Consultation</a></li>
         <li class="active-nav-bar"><a href="ticket.html">Ticket</a></li>
         <li><a href="smsHistory.html">Notification</a></li>
         <!-- <li><a href="emailHistory.html">Email</a></li> -->
@@ -52,22 +55,22 @@
         <option class="ticket-dropdown-option" value="purchase_request">
           Purchase Request
         </option>
-        <option class="ticket-dropdown-option" value="one_time_payment">
-          Payment
-        </option>
         <option class="ticket-dropdown-option" value="complain">
           Complain
         </option>
-        <!-- <option class="ticket-dropdown-option" value="bidding">
-          Bidding
-        </option> -->
-        <option class="ticket-dropdown-option" value="EMICalculator">
-          EMI Calculator
+        
+        <option class="ticket-dropdown-option" value="one_time_payment">
+          Payment
         </option>
+        <option class="ticket-dropdown-option" value="bidding">
+          Bidding
+        </option>
+        
         <option class="ticket-dropdown-option" value="others">Others</option>
       </select>
       <!-- END OF DROPDOWN -->
-      <!-- purchase Request FORM -->
+       
+      <!-- Purchase Request FORM -->
       <form id="purchaseRequestForm" action="" style="display: none">
         <div class="appointment-form-body">
           <div class="appointment-department-selecion">
@@ -81,61 +84,47 @@
           </div>
           <div class="appointment-department-selecion">
             <label for="service">Flat/Plot Name</label>
-            <select name="labTest" class="js-example-basic-single" onchange="serviceSelection(this)" multiple="multiple"
+            <select name="labTest" class="js-example-basic-single" onchange="updateFlatDetails(this)"
               style="width: 100%;">
               <option value="-/">Select Flat/Plot</option>
-              <option value="1200000" id="a1">A1</option>
-              <option value="1200000" id="a2">A2</option>
-              <option value="1200000" id="a3">A3</option>
-              <option value="1200000" id="a4">A4</option>
-              <option value="1200000" id="b1">B1</option>
-              <option value="1200000" id="b2">B2</option>
-              <option value="1200000" id="b3">B3</option>
-              <option value="1200000" id="b4">B4</option>
-
+              <option value="a1">A1</option>
+              <option value="a2">A2</option>
+              <option value="a3">A3</option>
+              <option value="a4">A4</option>
+              <option value="b1">B1</option>
+              <option value="b2">B2</option>
+              <option value="b3">B3</option>
+              <option value="b4">B4</option>
             </select>
           </div>
+          <div class="details-container" id="details-container">
+          </div>
+          <div class="details-container" id="emi-details-container">
+          </div>
           <div class="med-available-quantity">
-            <label for="servicePrice">Total Price</label>
+            <label for="servicePrice">Expected Price</label>
             <input type="text" id="servicePrice" value="" />
           </div>
           <div class="med-available-quantity">
-            <label for="discountLabtest">Discount Percentage (%)</label>
-            <input name="discountLabtest" id="discountService" type="text"
-              onchange="updateDiscountedPriceService(this.value)" value="0" />
+            <label for="servicePrice">Expected Price Type</label>
+            <select  class="js-example-basic-single"
+            style="width: 100%;">
+            <option value="-/">Select one</option>
+            <option value="sqft">Per sq. ft</option>
+            <option value="total">Total</option>
+          </select>
           </div>
           <div class="med-available-quantity">
-            <label for="discountedPriceLabTest">Discount Amount</label>
-            <input type="text" name="discountedPriceLabTest" id="ServiceDiscountAmount" readonly />
-          </div>
-          <div class="med-available-quantity">
-            <label for="discountedPriceService">Net Amount</label>
-            <input type="text" name="discountedPriceService" id="discountedPriceService" readonly />
-          </div>
-          <div>
-            <div class="appointment-department-selecion">
-              <label for="service">Payment Type</label>
-              <select id="paymentType" name="labTest" class="js-example-basic-single" style="width: 100%;">
-                <option value="-/">Select One</option>
-                <option value="EMI">EMI</option>
-                <option value="DownPayment">Down Payment</option>
-                <option value="BankLoan">Bank Loan</option>
-                <option value="oneTimePayment">One Time Payment</option>
-              </select>
+            <label for="discountLabtest">Expected Date</label>
+            <input type="date" />
+          </div>           
+
+          <div class="col-span-2">
+            <div class="appointment-remarks">
+              <label for="compain">Details</label>
+              <input type="text" placeholder="eg. text" />
             </div>
           </div>
-          <div class="appointment-department-selection">
-            <label for="paymentMethod">Payment Method</label>
-            <select id="paymentMethod" name="paymentMethod" class="js-example-basic-single" style="width: 100%;">
-              <option value="-/">Select One</option>
-              <option value="Cash">Cash</option>
-              <option value="Bank">Bank</option>
-              <option value="Bkash">Bkash</option>
-              <option value="Nagad">Nagad</option>
-              <option value="BankTransfer">Bank Transfer</option>
-            </select>
-          </div>
-
           <div class="appointment-remarks">
             <label for="labRemarks">Remarks</label>
             <input type="text" placeholder="eg. text" />
@@ -150,22 +139,23 @@
             <div class="notification-checkbox-container">
               <p class="notification-headline">Notification</p>
               <div>
-                <input type="checkbox" onclick="notificationCheckbox()" id="email-check-service" name="emailCheckbox" />
+                <input type="checkbox" onclick="notificationCheckbox()" id="email-check-complain"
+                  name="emailCheckbox" />
                 <label for="emailCheckbox">Email</label>
               </div>
               <div>
-                <input type="checkbox" onclick="notificationCheckbox()" id="sms-check-service" name="smsCheckbox" />
+                <input type="checkbox" onclick="notificationCheckbox()" id="sms-check-complain" name="smsCheckbox" />
                 <label for="smsCheckbox">SMS</label>
               </div>
             </div>
           </div>
-          <div id="email-body-service" style="display: none">
+          <div id="email-body-complain" style="display: none">
             <div class="appointment-remarks">
               <label for="emailBody">Email Body</label>
               <input type="text" placeholder="eg. text" />
             </div>
           </div>
-          <div id="sms-body-service" style="display: none">
+          <div id="sms-body-complain" style="display: none">
             <div class="appointment-remarks">
               <label for="emailBody">SMS Body</label>
               <input type="text" placeholder="eg. text" />
@@ -173,8 +163,99 @@
           </div>
         </div>
       </form>
-      <!-- SERVICE FORM END -->
+      <!-- Purchase Request FORM END -->
+      <!-- Bidding FORM -->
+      <form id="biddingForm" action="" style="display: none">
+        <div class="appointment-form-body">
+          <div class="appointment-department-selecion">
+            <label for="service">Project Name</label>
+            <select name="labTest" class="js-example-basic-single" style="width: 100%;">
+              <option value="-/">Select Project</option>
+              <option value="Baridhara">Baridhara J Block</option>
+              <option value="Rampura">Rampura</option>
+              <option value="Badda">Badda</option>
+            </select>
+          </div>
+          <div class="appointment-department-selecion">
+            <label for="service">Flat/Plot Name</label>
+            <select name="labTest" class="js-example-basic-single" onchange="updateBiddingDetails(this)"
+              style="width: 100%;">
+              <option value="-/">Select Flat/Plot</option>
+              <option value="a1">A1</option>
+              <option value="a2">A2</option>
+              <option value="a3">A3</option>
+              <option value="a4">A4</option>
+              <option value="b1">B1</option>
+              <option value="b2">B2</option>
+              <option value="b3">B3</option>
+              <option value="b4">B4</option>
+            </select>
+          </div>
+          <div class="details-containers" id="details-containers">
+          </div>
+          <div class="med-available-quantity">
+            <label for="servicePrice">Bidding Price</label>
+            <input type="text" id="servicePrice" value="" />
+          </div>
+          <div class="med-available-quantity">
+            <label for="servicePrice">Bidding Price Type</label>
+            <select  class="js-example-basic-single"
+            style="width: 100%;">
+            <option value="-/">Select one</option>
+            <option value="sqft">Per sq. ft</option>
+            <option value="total">Total</option>
+          </select>
+          </div>
+          <div class="med-available-quantity">
+            <label for="discountLabtest">Expected Date</label>
+            <input type="date" />
+          </div>           
 
+          <div class="col-span-2">
+            <div class="appointment-remarks">
+              <label for="compain">Details</label>
+              <input type="text" placeholder="eg. text" />
+            </div>
+          </div>
+          <div class="appointment-remarks">
+            <label for="labRemarks">Remarks</label>
+            <input type="text" placeholder="eg. text" />
+          </div>
+          <div>
+            <div class="notification-alert">
+              <p>
+                For sending Email or SMS notification to the customer, Check the
+                notification box
+              </p>
+            </div>
+            <div class="notification-checkbox-container">
+              <p class="notification-headline">Notification</p>
+              <div>
+                <input type="checkbox" onclick="notificationCheckbox()" id="email-check-complain"
+                  name="emailCheckbox" />
+                <label for="emailCheckbox">Email</label>
+              </div>
+              <div>
+                <input type="checkbox" onclick="notificationCheckbox()" id="sms-check-complain" name="smsCheckbox" />
+                <label for="smsCheckbox">SMS</label>
+              </div>
+            </div>
+          </div>
+          <div id="email-body-complain" style="display: none">
+            <div class="appointment-remarks">
+              <label for="emailBody">Email Body</label>
+              <input type="text" placeholder="eg. text" />
+            </div>
+          </div>
+          <div id="sms-body-complain" style="display: none">
+            <div class="appointment-remarks">
+              <label for="emailBody">SMS Body</label>
+              <input type="text" placeholder="eg. text" />
+            </div>
+          </div>
+        </div>
+      </form>
+      <!-- Bidding FORM END -->
       <!-- COMPLAIN FORM -->
       <form id="complainForm" action="" style="display: none">
         <div class="appointment-form-body">
@@ -217,6 +298,7 @@
                 <option value="kabir">Kabir</option>
               </select>
             </div>
+
             <!-- <div class="doctor-selecion">
               <label for="airtable">Need to add in airtable?</label>
               <select name="labService" class="js-example-basic-single" style="width: 100%;">
@@ -225,12 +307,7 @@
               </select>
             </div> -->
           </div>
-          <div class="med-available-quantity">
-            <label for="medicineQuantity">Next Call Date and Time</label>
-            <input type="datetime-local" id="medicineQuantity" />
-          </div>
           <div class="col-span-2">
-           
             <div class="appointment-remarks">
               <label for="compain">Details</label>
               <input type="text" placeholder="eg. text" />
@@ -275,7 +352,7 @@
         </div>
       </form>
       <!-- COMPLAIN FORM END -->
-
+      
       <!-- There Won't be any form for Information type -->
       <!-- ONE TIME PAYMENT FORM -->
       <form id="oneTimePaymentForm" action="" style="display: none">
@@ -350,7 +427,7 @@
           </div>
           <div class="med-available-quantity">
             <label for="medicineQuantity">Payment Date</label>
-            <input type="date" value="0" />
+            <input type="date" />
           </div>
           <div class="med-available-quantity">
             <label for="medicineQuantity">Amount</label>
@@ -359,7 +436,6 @@
         </div>
       </form>
       <!-- ONE TIME PAYMENT FORM -->
-
       <!-- OTHER FORM -->
       <form id="otherForm" action="" style="display: none">
         <div class="appointment-form-body">
@@ -406,7 +482,7 @@
 
     <footer class="section">
       <form action="" class="footer-form">
-
+        
         <div class="form-input form-input-sum">
           <label class="form-label" for="call_summary"> Call summary</label>
           <input class="form-input-field" type="text" placeholder="eg. text" />

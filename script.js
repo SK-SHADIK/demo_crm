@@ -2,24 +2,24 @@
 
 console.log("Connection Test");
 const ticketDropdownSelect = function (e) {
-  let complainForm = document.getElementById("complainForm");
   let purchaseRequestForm = document.getElementById("purchaseRequestForm");
+  let complainForm = document.getElementById("complainForm");
   let otherForm = document.getElementById("otherForm");
-  let covidFrom = document.getElementById("covidFrom");
   let oneTimePaymentForm = document.getElementById("oneTimePaymentForm");
+  let biddingForm = document.getElementById("biddingForm");
   const ticketDropdownValue = e.value;
 
   if (ticketDropdownValue) {
-   
+    purchaseRequestForm.style.display =
+      ticketDropdownValue === "purchase_request" ? "block" : "none";
     complainForm.style.display =
       ticketDropdownValue === "complain" ? "block" : "none";
-      purchaseRequestForm.style.display =
-      ticketDropdownValue === "purchase_request" ? "block" : "none";
     oneTimePaymentForm.style.display =
       ticketDropdownValue === "one_time_payment" ? "block" : "none";
     otherForm.style.display =
       ticketDropdownValue === "others" ? "block" : "none";
-    
+    biddingForm.style.display =
+      ticketDropdownValue === "bidding" ? "block" : "none";
   }
 };
 
@@ -42,25 +42,29 @@ const covidDropdownSelect = function (e) {
 };
 
 // For Showing Email/SMS Body
-
 const notificationCheckbox = function () {
   const sections = ["", "-med", "-complain", "-service", "-others"]; // Suffixes for common patterns
 
   for (const section of sections) {
-    const emailCheckbox = document.getElementById(
-      `email-check${section}`
-    ).checked;
-    const smsCheckbox = document.getElementById(`sms-check${section}`).checked;
+    const emailCheckboxElement = document.getElementById(`email-check${section}`);
+    const smsCheckboxElement = document.getElementById(`sms-check${section}`);
     const emailBody = document.getElementById(`email-body${section}`);
     const smsBody = document.getElementById(`sms-body${section}`);
 
-    emailBody.style.display = emailCheckbox ? "block" : "none";
-    smsBody.style.display = smsCheckbox ? "block" : "none";
+    // Check if the elements exist before accessing their properties
+    if (emailCheckboxElement && smsCheckboxElement && emailBody && smsBody) {
+      const emailCheckbox = emailCheckboxElement.checked;
+      const smsCheckbox = smsCheckboxElement.checked;
+
+      emailBody.style.display = emailCheckbox ? "block" : "none";
+      smsBody.style.display = smsCheckbox ? "block" : "none";
+    }
   }
 };
 
+
 // FOR SERVICE SELECTION - ONE TIME PAYMENT
-const purchaseRequestForm = function (e) {
+const serviceForm = function (e) {
   const serviceSection = document.getElementById("service-selection");
   const othersSection = document.getElementById("others-selection");
   const serviceValue = e.value;
@@ -191,7 +195,7 @@ function discountCalculationMedicine(discountElement) {
 
   // Display the net amount (after discount)
   document.getElementById("netAmountMedicine").value = discountedPrice;
-  
+
 }
 
 
@@ -229,3 +233,163 @@ function updateDiscountedPriceService(discountPercentage) {
 
 
 // TEDST
+
+const flatDetails = {
+  a1: {
+    flat: "A1",
+    status: "Available",
+    price: "900(sq ft)",
+    size: "1800(sq ft)",
+    details: "This is a south oriented flat. 3 bed rooms, 1 dining room, 1 drawing room, 1 kitchen, 3 bathroom, 3 veranda",
+    parking: "1 parking available",
+    bathroom: "2 attach and 1 common. 2 have high commode. 1 have bath tub."
+  },
+  a2: {
+    flat: "A2",
+    status: "Available",
+    price: "850(sq ft)",
+    size: "1750(sq ft)",
+    details: "This is a north oriented flat. 2 bed rooms, 1 dining room, 1 drawing room, 1 kitchen, 2 bathroom, 2 veranda",
+    parking: "2 parking available",
+    bathroom: "1 attach and 1 common. Both have high commode."
+  },
+  a3: {
+    flat: "A1",
+    status: "Available",
+    price: "900(sq ft)",
+    size: "1800(sq ft)",
+    details: "This is a south oriented flat. 3 bed rooms, 1 dining room, 1 drawing room, 1 kitchen, 3 bathroom, 3 veranda",
+    parking: "1 parking available",
+    bathroom: "2 attach and 1 common. 2 have high commode. 1 have bath tub."
+  },
+  a4: {
+    flat: "A2",
+    status: "Available",
+    price: "850(sq ft)",
+    size: "1750(sq ft)",
+    details: "This is a north oriented flat. 2 bed rooms, 1 dining room, 1 drawing room, 1 kitchen, 2 bathroom, 2 veranda",
+    parking: "2 parking available",
+    bathroom: "1 attach and 1 common. Both have high commode."
+  },
+  b1: {
+    flat: "A1",
+    status: "Available",
+    price: "900(sq ft)",
+    size: "1800(sq ft)",
+    details: "This is a south oriented flat. 3 bed rooms, 1 dining room, 1 drawing room, 1 kitchen, 3 bathroom, 3 veranda",
+    parking: "1 parking available",
+    bathroom: "2 attach and 1 common. 2 have high commode. 1 have bath tub."
+  },
+  b2: {
+    flat: "A2",
+    status: "Available",
+    price: "850(sq ft)",
+    size: "1750(sq ft)",
+    details: "This is a north oriented flat. 2 bed rooms, 1 dining room, 1 drawing room, 1 kitchen, 2 bathroom, 2 veranda",
+    parking: "2 parking available",
+    bathroom: "1 attach and 1 common. Both have high commode."
+  },
+  b3: {
+    flat: "A1",
+    status: "Available",
+    price: "900(sq ft)",
+    size: "1800(sq ft)",
+    details: "This is a south oriented flat. 3 bed rooms, 1 dining room, 1 drawing room, 1 kitchen, 3 bathroom, 3 veranda",
+    parking: "1 parking available",
+    bathroom: "2 attach and 1 common. 2 have high commode. 1 have bath tub."
+  },
+  b4: {
+    flat: "A2",
+    status: "Available",
+    price: "850(sq ft)",
+    size: "1750(sq ft)",
+    details: "This is a north oriented flat. 2 bed rooms, 1 dining room, 1 drawing room, 1 kitchen, 2 bathroom, 2 veranda",
+    parking: "2 parking available",
+    bathroom: "1 attach and 1 common. Both have high commode."
+  },
+};
+
+function updateFlatDetails(selectElement) {
+  const selectedFlat = selectElement.value;
+  const detailsContainer = document.getElementById("details-container");
+  const emiDetailsContainer = document.getElementById("emi-details-container");
+
+  if (selectedFlat === "-/") {
+    detailsContainer.innerHTML = ""; // Clear details if "Select Flat/Plot" is selected
+    return;
+  }
+
+  const details = flatDetails[selectedFlat];
+
+  if (details) {
+    detailsContainer.innerHTML = `
+    <div class="flat-info">
+    <h6 class="center"> Flat Details</h6>
+      <div class="flat-desc"><strong>Flat:</strong> ${details.flat}</div>
+      <div class="flat-desc"><strong>Status:</strong> ${details.status}</div>
+      <div class="flat-desc"><strong>Price:</strong> ${details.price}</div>
+      <div class="flat-desc"><strong>Size:</strong> ${details.size}</div>
+      <div class="flat-desc"><strong>Details:</strong> ${details.details}</div>
+      <div class="flat-desc"><strong>Parking:</strong> ${details.parking}</div>
+      <div class="flat-desc"><strong>Bathroom:</strong> ${details.bathroom}</div>
+      </div>
+    `;
+    emiDetailsContainer.innerHTML = `
+    <div class="emiDetailsContainer" id="emiDetailsContainer">
+    <div class="inbound-call-list">
+            <table class="inbound-call-table">
+                <tr class="table-row table-heading-row"> 
+                <th>Cash</th>
+                <th>EMI Amount</th>
+                <th>EMI Duration</th>
+                <th>Total EMI</th>
+            </tr>
+         <tr class="table-row table-data-row">
+            <td>1,50,00,000</td>
+            <td>1,90,00,000</td>
+            <td>3 Year</td>
+            <td>36</td>
+            </tr>
+            <tr class="table-row table-data-alt-row">
+            <td>1,50,00,000</td>
+            <td>2,00,00,000</td>
+            <td>4 Year</td>
+            <td>48</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+    `;
+  } else {
+    detailsContainer.innerHTML = "<div>No details available for the selected flat.</div>";
+  }
+}
+
+function updateBiddingDetails(selectElement) {
+  const selectedFlat = selectElement.value;
+  const detailsContainer = document.getElementById("details-containers");
+
+  if (selectedFlat === "-/") {
+    detailsContainer.innerHTML = ""; // Clear details if "Select Flat/Plot" is selected
+    return;
+  }
+
+  const details = flatDetails[selectedFlat];
+
+  if (details) {
+    detailsContainer.innerHTML = `
+    <div class="flat-info">
+    <h6 class="center"> Flat Details</h6>
+      <div class="flat-desc"><strong>Flat:</strong> ${details.flat}</div>
+      <div class="flat-desc"><strong>Status:</strong> ${details.status}</div>
+      <div class="flat-desc"><strong>Price:</strong> ${details.price}</div>
+      <div class="flat-desc"><strong>Size:</strong> ${details.size}</div>
+      <div class="flat-desc"><strong>Details:</strong> ${details.details}</div>
+      <div class="flat-desc"><strong>Parking:</strong> ${details.parking}</div>
+      <div class="flat-desc"><strong>Bathroom:</strong> ${details.bathroom}</div>
+      </div>
+    `;
+  } else {
+    detailsContainer.innerHTML = "<div>No details available for the selected flat.</div>";
+  }
+}
