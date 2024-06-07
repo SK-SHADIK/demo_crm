@@ -7,6 +7,7 @@ const ticketDropdownSelect = function (e) {
   let otherForm = document.getElementById("otherForm");
   let oneTimePaymentForm = document.getElementById("oneTimePaymentForm");
   let biddingForm = document.getElementById("biddingForm");
+  let calculatorForm = document.getElementById("calculatorForm");
   const ticketDropdownValue = e.value;
 
   if (ticketDropdownValue) {
@@ -20,6 +21,8 @@ const ticketDropdownSelect = function (e) {
       ticketDropdownValue === "others" ? "block" : "none";
     biddingForm.style.display =
       ticketDropdownValue === "bidding" ? "block" : "none";
+    calculatorForm.style.display =
+      ticketDropdownValue === "emi_calculator" ? "block" : "none";
   }
 };
 
@@ -392,4 +395,45 @@ function updateBiddingDetails(selectElement) {
   } else {
     detailsContainer.innerHTML = "<div>No details available for the selected flat.</div>";
   }
+}
+
+
+// EMI Calculator
+function updateValue(id) {
+  const value = document.getElementById(id + '-range').value;
+  document.getElementById(id).value = value;
+  if (id === 'loan-period') {
+      document.getElementById('loan-period-output').innerText = value;
+  }
+}
+
+function updateRange(id) {
+  const value = document.getElementById(id.replace('-range', '')).value;
+  document.getElementById(id).value = value;
+}
+
+function calculateLoan() {
+  const totalPrice = parseFloat(document.getElementById('total-price').value);
+  const loanPeriod = parseFloat(document.getElementById('loan-period').value);
+  const downPaymentPercent = parseFloat(document.getElementById('down-payment').value);
+  const interestRate = parseFloat(document.getElementById('interest-rate').value);
+
+  const downPayment = totalPrice * (downPaymentPercent / 100);
+  const loanAmount = totalPrice - downPayment;
+  const monthlyInterestRate = interestRate / 100 / 12;
+  const numberOfPayments = loanPeriod * 12;
+
+  const monthlyPayment = (loanAmount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments));
+  const totalPayable = monthlyPayment * numberOfPayments;
+
+  const interestAmount = totalPayable - loanAmount;
+  const interestPercent = (interestAmount / totalPayable) * 100;
+  const principalPercent = 100 - interestPercent;
+
+  document.getElementById('monthly-payment').innerText = 'BDT ' + monthlyPayment.toFixed(2);
+  document.getElementById('total-payable').innerText = 'BDT ' + totalPayable.toFixed(2);
+  document.getElementById('interest-bar').style.width = interestPercent + '%';
+  document.getElementById('interest-bar').innerText = interestPercent.toFixed(2) + '%';
+  document.getElementById('principal-bar').style.width = principalPercent + '%';
+  document.getElementById('principal-bar').innerText = principalPercent.toFixed(2) + '%';
 }

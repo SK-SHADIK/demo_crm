@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/project-list.css" />
+    <link rel="stylesheet" href="styles/emi-calculator.css" />
     <!-- CUSTOM JS -->
     <script src="script.js"></script>
   </head>
@@ -58,18 +59,21 @@
         <option class="ticket-dropdown-option" value="complain">
           Complain
         </option>
-        
+
         <option class="ticket-dropdown-option" value="one_time_payment">
           Payment
         </option>
         <option class="ticket-dropdown-option" value="bidding">
           Bidding
         </option>
-        
+        <option class="ticket-dropdown-option" value="emi_calculator">
+          EMI Calculator
+        </option>
+
         <option class="ticket-dropdown-option" value="others">Others</option>
       </select>
       <!-- END OF DROPDOWN -->
-       
+
       <!-- Purchase Request FORM -->
       <form id="purchaseRequestForm" action="" style="display: none">
         <div class="appointment-form-body">
@@ -107,17 +111,16 @@
           </div>
           <div class="med-available-quantity">
             <label for="servicePrice">Expected Price Type</label>
-            <select  class="js-example-basic-single"
-            style="width: 100%;">
-            <option value="-/">Select one</option>
-            <option value="sqft">Per sq. ft</option>
-            <option value="total">Total</option>
-          </select>
+            <select class="js-example-basic-single" style="width: 100%;">
+              <option value="-/">Select one</option>
+              <option value="sqft">Per sq. ft</option>
+              <option value="total">Total</option>
+            </select>
           </div>
           <div class="med-available-quantity">
             <label for="discountLabtest">Expected Date</label>
             <input type="date" />
-          </div>           
+          </div>
 
           <div class="col-span-2">
             <div class="appointment-remarks">
@@ -199,17 +202,16 @@
           </div>
           <div class="med-available-quantity">
             <label for="servicePrice">Bidding Price Type</label>
-            <select  class="js-example-basic-single"
-            style="width: 100%;">
-            <option value="-/">Select one</option>
-            <option value="sqft">Per sq. ft</option>
-            <option value="total">Total</option>
-          </select>
+            <select class="js-example-basic-single" style="width: 100%;">
+              <option value="-/">Select one</option>
+              <option value="sqft">Per sq. ft</option>
+              <option value="total">Total</option>
+            </select>
           </div>
           <div class="med-available-quantity">
             <label for="discountLabtest">Expected Date</label>
             <input type="date" />
-          </div>           
+          </div>
 
           <div class="col-span-2">
             <div class="appointment-remarks">
@@ -256,6 +258,53 @@
         </div>
       </form>
       <!-- Bidding FORM END -->
+      <!-- Calculator FORM -->
+      <form id="calculatorForm" action="" style="display: none">
+        <div class="appointment-form-body">
+          <div class="emi-container">
+            <div class="emi-calculator">
+              <div class="emi-input-section">
+                <div class="emi-input-group">
+                  <label for="total-price">Total Price</label>
+                  <input type="range" id="total-price-range" min="0" max="1000000" step="1000" value="100000"
+                    oninput="updateValue('total-price')">
+                  <input type="number" id="total-price" value="100000" oninput="updateRange('total-price-range')">
+                </div>
+                <div class="emi-input-group">
+                  <label for="loan-period">Loan Period (Years)</label>
+                  <input type="range" id="loan-period-range" min="1" max="30" value="25"
+                    oninput="updateValue('loan-period')">
+                  <input type="number" id="loan-period" value="25" oninput="updateRange('loan-period-range')">
+                </div>
+                <div class="emi-input-group">
+                  <label for="down-payment">Down Payment (%)</label>
+                  <input type="range" id="down-payment-range" min="0" max="100" value="30"
+                    oninput="updateValue('down-payment')">
+                  <input type="number" id="down-payment" value="30" oninput="updateRange('down-payment-range')">
+                </div>
+                <div class="emi-input-group">
+                  <label for="interest-rate">Interest Rate (%)</label>
+                  <input type="range" id="interest-rate-range" min="0" max="20" step="0.1" value="9"
+                    oninput="updateValue('interest-rate')">
+                  <input type="number" id="interest-rate" value="9" step="0.1"
+                    oninput="updateRange('interest-rate-range')">
+                </div>
+                <button class="btn btn-primary" onclick="calculateLoan()">Calculate Loan</button>
+              </div>
+              <div class="emi-output-section">
+                <p>Monthly Payment: <span id="monthly-payment">BDT 0</span></p>
+                <p>Total Payable over <span id="loan-period-output">25</span> Years: <span id="total-payable">BDT
+                    0</span></p>
+                <div class="payment-breakdown">
+                  <div class="interest-bar" id="interest-bar" style="width: 60%;">60%</div>
+                  <div class="principal-bar" id="principal-bar" style="width: 40%;">40%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <!-- Calculator FORM END -->
       <!-- COMPLAIN FORM -->
       <form id="complainForm" action="" style="display: none">
         <div class="appointment-form-body">
@@ -352,7 +401,7 @@
         </div>
       </form>
       <!-- COMPLAIN FORM END -->
-      
+
       <!-- There Won't be any form for Information type -->
       <!-- ONE TIME PAYMENT FORM -->
       <form id="oneTimePaymentForm" action="" style="display: none">
@@ -482,7 +531,7 @@
 
     <footer class="section">
       <form action="" class="footer-form">
-        
+
         <div class="form-input form-input-sum">
           <label class="form-label" for="call_summary"> Call summary</label>
           <input class="form-input-field" type="text" placeholder="eg. text" />

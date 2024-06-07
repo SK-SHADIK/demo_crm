@@ -1,0 +1,81 @@
+.emi-container {
+    background-color: #fff;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.emi-calculator {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.emi-input-section,
+.emi-output-section {
+    width: 45%;
+}
+
+.emi-input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+
+.emi-output-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.emi-output-section p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.payment-breakdown {
+    display: flex;
+    margin-top: 20px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.interest-bar {
+    background-color: #2ecc71;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    height: 30px;
+}
+
+.principal-bar {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    height: 30px;
+}
