@@ -17,32 +17,29 @@
     <script src="script.js"></script>
   </head>
   <body>
-    <!-- Naivigation -->
-    <nav class="section">
-      <ul class="nav-menu">
-        <li class=""><a href="client-details.html">Details</a></li>
-        <li><a href="calllog.html">Log</a></li>
-        <li><a href="project-list.html">Project List</a></li>
-        <li><a href="purchase-list.html">Purchase List</a></li>
-        <li class="active-nav-bar"><a href="ticket.html">Ticket</a></li>
-        <li><a href="smsHistory.html">Notification</a></li>
-        <!-- <li><a href="emailHistory.html">Email</a></li> -->
-        <li><a href="ticketHistory.html">History</a></li>
-      </ul>
-    </nav>
+        <!-- Naivigation -->
+        <nav class="section">
+          <ul class="nav-menu">
+            <li class=""><a href="client-details.html">Details</a></li>
+            <li><a href="calllog.html">Log</a></li>
+            <li><a href="project-list.html">Project List</a></li>
+            <li><a href="purchase-list.html">Purchase List</a></li>
+            <li class="active-nav-bar"><a href="ticket.html">Ticket</a></li>
+            <li><a href="smsHistory.html">Notification</a></li>
+            <!-- <li><a href="emailHistory.html">Email</a></li> -->
+            <li><a href="ticketHistory.html">History</a></li>
+          </ul>
+        </nav>
 
     <main class="section">
       <div class="patient-info-overview">
         <h6>A K M Fahim Kabir</h6>
-        <h6>PHBL0000034393</h6>
         <h6>akmkabir@praavahealth.com</h6>
         <h6>+8801789492777</h6>
       </div>
       <br />
       <!-- DROPDOWN FOR TICKET -->
-      <h5 class="margin-top-1rem ticket-type-lable">
-        Ticket Type : <span class="ticket-action-p">Laboratory</span>
-      </h5>
+      <h5 class=" margin-top-1rem ticket-type-lable">Ticket Type : <span class="ticket-action-p">Payment</span></h5>
       <!-- END OF DROPDOWN -->
 
       <!-- END OF LAB FORM -->
@@ -51,32 +48,29 @@
       <form id="complainForm" action="">
         <div class="appointment-form-body">
           <div class="col-span-2 complain-dropdowns">
+
             <div class="appointment-department-selecion">
-              <label for="complainType"
-                >Lab Test Name : <span class="ticket-action-p">CBC</span></label
-              >
+              <label for="complainType">Project Name : <span class="ticket-action-p">Baridhara J Block</span></label>
+            </div>
+            <div class="appointment-department-selecion">
+              <label for="complainType">Flat Number : <span class="ticket-action-p">D2</span></label>
             </div>
             <div class="doctor-selecion">
-              <label for="complainPriority"
-                >Total Price :
-                <span class="ticket-action-p">3500 Taka</span></label
-              >
+              <label for="complainPriority">Total Payable Amount : <span class="ticket-action-p">1,50,000 Taka</span></label>
             </div>
             <div class="doctor-selecion">
-              <label for="complainPriority"
-                >Billing Status:
-                <span class="ticket-action-p">Paid</span></label
-              >
+              <label for="complainPriority">Payment Type : <span class="ticket-action-p">EMI</span></label>
             </div>
+            <div class="doctor-selecion">
+              <label for="complainPriority">Payment Method : <span class="ticket-action-p">Cash</span></label>
+            </div>
+            <!-- <div class="doctor-selecion">
+              <label for="complainPriority">Billing Status: <span class="ticket-action-p">Paid</span></label>
+            </div> -->
           </div>
           <div class="col-span-2">
             <div class="appointment-remarks">
-              <label for="compain"
-                >Details:
-                <span class="ticket-action-p"
-                  >Patient booked a cbc test for himself.</span
-                ></label
-              >
+              <label for="compain">Details: <span class="ticket-action-p">EMI Payment will be given at 13-Jun-2024.</span></label>
             </div>
           </div>
         </div>
@@ -96,15 +90,12 @@
               <label for="complainType">Assign to department </label>
               <select  name="complaintype" class="js-example-basic-single" style="width: 100%;">
                 <option value="lab_report">Finance</option>
-                <option value="lab_report">Information Technology</option>
-                <option value="lab_report">Medical Service</option>
-                <option value="lab_report">Patient Experience</option>
+                <option value="lab_report">Marketing</option>
+                <option value="lab_report">Sales</option>
+                <option value="lab_report">Plumber</option>
+                <option value="lab_report">Electrician</option>
                 <option value="lab_report">Operations</option>
-                <option value="lab_report">Laboratory</option>
-                <option value="lab_report">Corporate Maketing</option>
-                <option value="lab_report">Sales Maketing</option>
                 <option value="lab_report">Human Resource</option>
-                <option value="lab_report">Procurement</option>
               </select>
             </div>
             <div class="doctor-selecion">
@@ -143,66 +134,46 @@
         <br>
         <br>
       </form>
-      <!-- EXTRA FORM END -->
-      <br />
-      <br />
-      <br />
 
+      <!-- EXTRA FORM END -->
+      <br>
+      <br>
+      <br>
+     
       <div class="inbound-call-list">
         <table class="inbound-call-table">
-          <tbody>
-            <tr class="table-row table-heading-row">
-              <th><h6>Assigned Department</h6></th>
-              <th><h6>Assigned To</h6></th>
-              <th><h6>Status</h6></th>
-              <th><h6>Assigned Time</h6></th>
-              <th><h6>Action Time</h6></th>
-              <th><h6>Remarks</h6></th>
-            </tr>
-           
-            <tr class="table-row table-data-row">
-              <td><p>Laboratory</p></td>
-              <td><p>Shams Wali</p></td>
-              <td><p>In Progress</p></td>
-              <td class="">
-                <p>02-Oct-2023 <br />16:00</p>
-              </td>
-              <td class="">
-                <p>03-Oct-2023 <br />15:30</p>
-              </td>
-              <td class=""><p>Please book the test.</p></td>
-            </tr>
-            <tr class="table-row table-data-alt-row">
-              <td><p>Patient Experience</p></td>
-              <td><p>Sazzad Siddique</p></td>
-              <td><p>Open</p></td>
-              <td class="">
-                <p>02-Oct-2023 <br />15:54</p>
-              </td>
-              <td class="">
-                <p>02-Oct-2022 <br />16:00</p>
-              </td>
-              <td class=""><p>Patient booked a cbc test for himself</p></td>
-            </tr>
-          </tbody>
+            <tbody>
+                <tr class="table-row table-heading-row"> 
+                    <th><h6>Assigned Department</h6></th>
+                    <th><h6>Assigned To</h6></th>
+                    <th><h6>Status </h6></th>
+                    <th><h6 >Assigned Time</h6></th>
+                    <th><h6 >Action Time </h6></th>
+                    <th><h6>Remarks </h6></th>
+                </tr>
+                <tr class="table-row table-data-row">
+                    <td><p>Finance</p></td>
+                    <td><p>Amir Hossain</p></td>
+                    <td><p>Open</p></td>
+                    <td class=""><p>13-Jun-2024</td>
+                    <td class=""><p></p></td>
+                    <td class=""><p>EMI Payment will be given at 13-Jun-2024.</p></td>
+                </tr>
+            </tbody>
         </table>
-      </div>
-      <div class="pagination">
+    </div>
+    <div class="pagination">
         <p>01 page of 21</p>
         <div class="pagination-menu">
-          <a class="pagination-nav"
-            ><ion-icon name="chevron-back-outline"></ion-icon
-          ></a>
-          <a class="pagination-pages active-page" href="">01</a>
-          <a class="pagination-pages" href="">02</a>
-          <a class="pagination-pages" href="">03</a>
-          <a class="pagination-pages" href="">04</a>
-          <a class="pagination-pages" href="">...</a>
-          <a class="pagination-nav"
-            ><ion-icon name="chevron-forward-outline"></ion-icon
-          ></a>
+         <a class="pagination-nav"><ion-icon name="chevron-back-outline"></ion-icon></a>
+         <a class="pagination-pages active-page" href="">01</a>
+         <a class="pagination-pages" href="">02</a>
+         <a class="pagination-pages" href="">03</a>
+         <a class="pagination-pages" href="">04</a>
+         <a class="pagination-pages" href="">...</a>
+         <a class="pagination-nav"><ion-icon name="chevron-forward-outline"></ion-icon></a>
         </div>
-      </div>
+     </div>
     </main>
   </body>
 </html>

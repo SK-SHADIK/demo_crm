@@ -34,13 +34,12 @@
     <main class="section">
       <div class="patient-info-overview">
         <h6>A K M Fahim Kabir</h6>
-        <h6>PHBL0000034393</h6>
         <h6>akmkabir@praavahealth.com</h6>
         <h6>+8801789492777</h6>
       </div>
       <br />
       <!-- DROPDOWN FOR TICKET -->
-      <h5 class=" margin-top-1rem ticket-type-lable">Ticket Type : <span class="ticket-action-p">Covid Response</span></h5>
+      <h5 class=" margin-top-1rem ticket-type-lable">Ticket Type : <span class="ticket-action-p">Purchase</span></h5>
       <!-- END OF DROPDOWN -->
 
       <!-- END OF LAB FORM -->
@@ -48,30 +47,18 @@
       <!-- COMPLAIN FORM -->
       <form id="complainForm" action="">
         <div class="appointment-form-body">
-          <div class="appointment-department-selecion">
-            <label for="complainType">Covid Response Status : <span class="ticket-action-p">Call successful and received feedback</span></label>
+          <div class="col-span-2 complain-dropdowns">
+
+            <div class="appointment-department-selecion">
+              <label for="complainType">Project Name : <span class="ticket-action-p">Baridhara J Block</span></label>
+            </div>
+            <div class="doctor-selecion">
+              <label for="complainPriority">Flat Number : <span class="ticket-action-p">A3</span></label>
+            </div>
           </div>
           <div class="col-span-2">
             <div class="appointment-remarks">
-              <label>Did the collector identify the patient and test names before collections?: <span class="nps-green">Yes</span></label>
-              <br>
-              <label>Did the sample collector explain the procedure to the patient? <span class="nps-green">Yes</span></label>
-              <br>
-              <label>Did the patient feel any discomfort during collection? <span class="nps-green">Yes</span></label>
-              <br>
-              <label>Did the sample collector provide invoice? <span class="nps-red">No</span></label>
-              <br>
-              <label>Was the sample collector well behaved/ grommed? <span class="nps-green">Yes</span></label>
-              <br>
-              <label>Was the sample collected within the expected time? <span class="nps-red">No</span></label>
-              <br>
-              <label>Did the sample collector explain the report delivery process, date and time?<span class="nps-green">Yes</span></label>
-              <br>
-              <label>Did the sample collector ask for any patient identification?<span class="nps-green">Yes</span></label>
-              <br>
-              <label>NPS Rating Provided (Overall rating) :<span class="nps-green"> 8</span></label>
-              <br>
-              <label>Details: <span class="ticket-action-p">Overall service was great.</span></label>
+              <label for="compain">Details: <span class="ticket-action-p">Purchase Baridhara J Block A3</span></label>
             </div>
           </div>
         </div>
@@ -91,15 +78,12 @@
               <label for="complainType">Assign to department </label>
               <select  name="complaintype" class="js-example-basic-single" style="width: 100%;">
                 <option value="lab_report">Finance</option>
-                <option value="lab_report">Information Technology</option>
-                <option value="lab_report">Medical Service</option>
-                <option value="lab_report">Patient Experience</option>
+                <option value="lab_report">Marketing</option>
+                <option value="lab_report">Sales</option>
+                <option value="lab_report">Plumber</option>
+                <option value="lab_report">Electrician</option>
                 <option value="lab_report">Operations</option>
-                <option value="lab_report">Laboratory</option>
-                <option value="lab_report">Corporate Maketing</option>
-                <option value="lab_report">Sales Maketing</option>
                 <option value="lab_report">Human Resource</option>
-                <option value="lab_report">Procurement</option>
               </select>
             </div>
             <div class="doctor-selecion">
@@ -155,21 +139,37 @@
                     <th><h6 >Action Time </h6></th>
                     <th><h6>Remarks </h6></th>
                 </tr>
-                <tr class="table-row table-data-row">
-                    <td><p>Patient Experience</p></td>
-                    <td><p>Sazzad Siddique</p></td>
-                    <td><p>Closed</p></td>
-                    <td class=""><p>06-Oct-2023 <br>15:54</p></td>
-                    <td class=""><p>06-Oct-2022 <br>16:00</p></td>
-                    <td class=""><p>Covid Feedback.</p></td>
-                </tr>
-                <tr class="table-row table-data-alt-row">
+                <!-- <tr class="table-row table-data-row">
                   <td><p>Patient Experience</p></td>
                   <td><p>Sazzad Siddique</p></td>
-                  <td><p>Open</p></td>
-                  <td class=""><p>06-Oct-2023 <br>13:00</p></td>
-                  <td class=""><p>06-Oct-2023 <br>15:54</p></td>
-                  <td class=""><p>Covid Feedback.</p></td>
+                  <td><p>Resolved</p></td>
+                  <td class=""><p>02-Oct-2023 <br>14:00</p></td>
+                  <td class=""><p>02-Oct-2023 <br>15:30</p></td>
+                  <td class=""><p>Resolved the issue.</p></td>
+                </tr> -->
+                <tr class="table-row table-data-row">
+                  <td><p>Electrician</p></td>
+                  <td><p>Sazzad Siddique</p></td>
+                  <td><p>Resolved</p></td>
+                  <td class=""><p>02-May-2024 <br>15:54</p></td>
+                  <td class=""><p>03-May-2024 <br>14:00</p></td>
+                  <td class=""><p>Flat's Living Room Light is not works .</p></td>
+                </tr>
+                <tr class="table-row table-data-row">
+                  <td><p>Finance</p></td>
+                  <td><p>Siddique</p></td>
+                  <td><p>Closed</p></td>
+                  <td class=""><p>12-Feb-2024 <br>15:54</p></td>
+                  <td class=""><p>13-Feb-2024 <br>14:00</p></td>
+                  <td class=""><p>Clear Payment for Baridhara J Block A3 Flat.</p></td>
+                </tr>
+                <tr class="table-row table-data-row">
+                  <td><p>Sales</p></td>
+                  <td><p>Siddique</p></td>
+                  <td><p>Closed</p></td>
+                  <td class=""><p>02-Jan-2024 <br>15:54</p></td>
+                  <td class=""><p>03-Jan-2024 <br>14:00</p></td>
+                  <td class=""><p>Final pricing for Baridhara J Block A3 Flat.</p></td>
                 </tr>
             </tbody>
         </table>
