@@ -46,11 +46,11 @@
       <!-- DROPDOWN FOR TICKET -->
       <h6 class="ticket-type-lable">Ticket Type</h6>
       <select id="ticketDropdown" class="ticket-dropdown" onchange="ticketDropdownSelect(this)" name="">
-        <option class="ticket-dropdown-option" value="purchase_request">
-          Purchase Request
-        </option>
         <option class="ticket-dropdown-option" value="information">
           Information
+        </option>
+        <option class="ticket-dropdown-option" value="purchase_request">
+          Purchase Request
         </option>
         <option class="ticket-dropdown-option" value="one_time_payment">
           Payment
@@ -68,7 +68,7 @@
       </select>
       <!-- END OF DROPDOWN -->
       <!-- purchase Request FORM -->
-      <form id="purchaseRequestForm" action="" style="display: block">
+      <form id="purchaseRequestForm" action="" style="display: none">
         <div class="appointment-form-body">
           <div class="appointment-department-selecion">
             <label for="service">Project Name</label>
@@ -185,7 +185,9 @@
               <select class="js-example-basic-single" style="width: 100%;" name="complaintype" id="">
                 <option value="-/">Select Complaint type </option>
                 <option value="lab_report">Service</option>
+                <option value="lab_report">Flat</option>
                 <option value="lab_report">Flat Product Damages</option>
+                <option value="lab_report">Payment</option>
                 <option value="lab_report">Other</option>
               </select>
             </div>
@@ -223,7 +225,12 @@
               </select>
             </div> -->
           </div>
+          <div class="med-available-quantity">
+            <label for="medicineQuantity">Next Call Date and Time</label>
+            <input type="datetime-local" id="medicineQuantity" />
+          </div>
           <div class="col-span-2">
+           
             <div class="appointment-remarks">
               <label for="compain">Details</label>
               <input type="text" placeholder="eg. text" />
@@ -290,9 +297,23 @@
               <option value="-/">Select Payment Type</option>
               <option value="sslcommerz">SslCommerz</option>
               <option value="cash">Cash</option>
+              <option value="cash">Bank Transfer</option>
+              <option value="cash">Bank</option>
+              <option value="cash">Bkash</option>
+              <option value="cash">Nagad</option>
             </select>
           </div>
-          <div class="appointment-department-selection">
+          <div class="appointment-department-selecion">
+            <label for="medicineName">Payment Type</label>
+            <select name="labTest" class="js-example-basic-single" style="width: 100%;">
+              <option value="-/">Select Payment Type</option>
+              <option value="EMI">EMI</option>
+              <option value="downPayment">Down Payment</option>
+              <option value="oneTimePayment">One Time Payment</option>
+              <option value="bankLoan">Bank Loan</option>
+            </select>
+          </div>
+          <!-- <div class="appointment-department-selection">
             <label for="service-radiobutton">Select</label>
             <div class="service-radiobutton">
               <input onchange="serviceForm(this)" type="radio" id="serviceRad" name="selectService" value="service" />
@@ -320,7 +341,7 @@
                 <option value="850" id="nasopharynyx">X-Ray - Nasopharynx Lateral View - 850 BDT</option>
               </select>
             </div>
-          </div>
+          </div> -->
           <div id="others-selection" style="display: none;">
             <div class="med-available-quantity">
               <label for="medicineQuantity">Input Description</label>
@@ -328,11 +349,11 @@
             </div>
           </div>
           <div class="med-available-quantity">
-            <label for="medicineQuantity">Gross Amount</label>
-            <input type="text" value="0" />
+            <label for="medicineQuantity">Payment Date</label>
+            <input type="date" value="0" />
           </div>
           <div class="med-available-quantity">
-            <label for="medicineQuantity">Net Amount</label>
+            <label for="medicineQuantity">Amount</label>
             <input readonly type="text" value="0" />
           </div>
         </div>
